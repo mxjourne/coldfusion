@@ -1,3 +1,4 @@
+<!---  Header contents --->
 <div class="row bg-dark">
     <div class="container text-center text-white">
         <div class="col-12 p-4">

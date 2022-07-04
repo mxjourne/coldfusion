@@ -6,12 +6,16 @@
     </head>
 <body>
 
+<!---  Include header of the site --->
 <cfinclude template="../includes/header.cfm"> 
 
+<!---  Output page contents --->
 <div><cfoutput>#attributes.mainContent#</cfoutput></div>
 
+<!---  Include footer of the site --->
 <cfinclude template="../includes/footer.cfm"> 
 
+<!---  Output additional js from page --->
 <cfoutput>#attributes.includeJs#</cfoutput>
 
 </body>
