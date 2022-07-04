@@ -12,3 +12,11 @@
 
 # CFML Includes
 [https://github.com/mxjourne/coldfusion/commit/6571d7e4a216981bf935749a2f2e08983f5c6af0](https://github.com/mxjourne/coldfusion/commit/6571d7e4a216981bf935749a2f2e08983f5c6af0)
+
+# Database Queries
+Define global datasource in application.cfc.
+Create sample database query call using `<cfquery>` tag.
+[https://github.com/mxjourne/coldfusion/commit/3a3576c11ef480650044d558b30141642f82ce2d](https://github.com/mxjourne/coldfusion/commit/3a3576c11ef480650044d558b30141642f82ce2d)
+
+Create sample database query call using `queryExecute()` method.
+[https://github.com/mxjourne/coldfusion/commit/eecfe0374c9757144320d8e33ef302d5fd8b2ec0](https://github.com/mxjourne/coldfusion/commit/eecfe0374c9757144320d8e33ef302d5fd8b2ec0)
