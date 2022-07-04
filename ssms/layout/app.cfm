@@ -4,7 +4,7 @@
         <title>Simple Student Management System</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
 
     </head>
@@ -13,17 +13,21 @@
 <!---  Include header of the site --->
 <cfinclude template="../includes/header.cfm"> 
 
+<cfif IsDefined("attributes.mainContent")>
 <!---  Output page contents --->
 <div><cfoutput>#attributes.mainContent#</cfoutput></div>
+</cfif>
 
 <!---  Include footer of the site --->
 <cfinclude template="../includes/footer.cfm"> 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
+<cfif IsDefined("attributes.includeJs")>
 <!---  Output additional js from page --->
 <cfoutput>#attributes.includeJs#</cfoutput>
+</cfif>
 
 </body>
 </html>
