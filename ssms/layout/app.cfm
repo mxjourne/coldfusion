@@ -13,9 +13,9 @@
 <!---  Include header of the site --->
 <cfinclude template="../includes/header.cfm"> 
 
-<cfif IsDefined("attributes.mainContent")>
+<cfif IsDefined("attributes.pageContent")>
 <!---  Output page contents --->
-<div><cfoutput>#attributes.mainContent#</cfoutput></div>
+<div><cfoutput>#attributes.pageContent#</cfoutput></div>
 </cfif>
 
 <!---  Include footer of the site --->
@@ -24,7 +24,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
-<cfif IsDefined("attributes.includeJs")>
+<cfif IsDefined("attributes.extraJs")>
 <!---  Output additional js from page --->
 <cfoutput>#attributes.includeJs#</cfoutput>
 </cfif>

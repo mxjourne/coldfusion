@@ -1,12 +1,12 @@
 <!---  Contents of the page --->
-<cfsavecontent variable="maincontent">
+<cfsavecontent variable="pageContent">
 
 </cfsavecontent>
 
 <!---  Contents for additional js --->
-<cfsavecontent variable="includeJs">
+<cfsavecontent variable="extraJs">
 
 </cfsavecontent>
 
-<!---  Load page layout module --->
-<cfmodule template="../layout/app.cfm" mainContent="#maincontent#" includeJs="#includeJS#">
+<!---  Load page layout module and defined maincontent and incudleJS variables --->
+<cfmodule template="../layout/app.cfm" mainContent="#pageContent#" includeJs="#extraJS#">
