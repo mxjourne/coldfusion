@@ -8,7 +8,11 @@
 
 <cfinclude template="../includes/header.cfm"> 
 
+<div><cfoutput>#attributes.mainContent#</cfoutput></div>
+
 <cfinclude template="../includes/footer.cfm"> 
+
+<cfoutput>#attributes.includeJs#</cfoutput>
 
 </body>
 </html>
