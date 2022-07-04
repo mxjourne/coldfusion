@@ -1,8 +1,9 @@
 <!---  Contents of the page --->
 <cfsavecontent variable="pageContent">
-    <cfquery name = "getStudents"> 
-        select * from students
-    </cfquery> 
+    
+    <cfscript>
+        getStudents = queryExecute("select * from students")
+    </cfscript>
 
     <div class="container">
         <div class="row mt-4">
