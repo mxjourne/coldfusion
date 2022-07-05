@@ -5,6 +5,7 @@
         <div class="col-12 p-4">
             <h3>
                 <cfscript>
+                    <!--- display app name from component --->
                     appname = createObject("component", "ssms.components.global");
                     writeOutput(appname.getAppName());
                 </cfscript>
@@ -16,6 +17,20 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                            <!--- display app menu arrays from component --->
+                            <cfscript>
+                                appmenus = createObject("component", "ssms.components.global");
+                                menus = appmenus.getAppMenus();
+                                
+                                <!--- menu array loop --->
+                                menus.each( function( element, index) 
+                                {
+                                    writeOutput("<li class='nav-item'><a href='' class='nav-link'>#element.menu#</a></li>");
+                                });
+                            </cfscript>
+                    </ul>
+                        
                     <ul class="nav navbar-nav ms-auto">
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><cfoutput>#loginUser#</cfoutput></a>
