@@ -3,7 +3,12 @@
 <div class="row bg-dark">
     <div class="container text-center text-white">
         <div class="col-12 p-4">
-            <h3>Simple Students Management System</h3>
+            <h3>
+                <cfscript>
+                    appname = createObject("component", "ssms.components.global");
+                    writeOutput(appname.getAppName());
+                </cfscript>
+            </h3>
         </div>
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             <div class="container-fluid">
