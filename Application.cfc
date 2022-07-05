@@ -4,4 +4,8 @@ component{
     // Default Datasource Name
     this.datasource = "cfsqlserver";
 
+    this.rootDir = getDirectoryFromPath(getCurrentTemplatePath());
+
+    this.mappings["/ssms"] = "#this.rootDir#ssms/";
+
 }
