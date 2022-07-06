@@ -17,7 +17,21 @@ component{
 
     public function getAllRecords()
     {
-        return queryExecute( "SELECT * FROm students");
+        studentQuery = queryExecute( "SELECT * FROM students");
+        cfloop(query = studentQuery, startRow = 1, endRow = studentQuery.recordCount){
+            if( isJson("#subjects#") ){
+                descsubjects = deserializeJSON("#subjects#");
+                subject = "";
+                descsubjects.each( function( element, index) 
+                {
+                    if(index)
+                    {
+                        subject = subject & (element & ",");
+                    }
+                });
+                querySetCell(studentQuery, "subjects", subject, studentQuery.currentRow);
+            }
+        }
+        return studentQuery;
     }
-
 }
