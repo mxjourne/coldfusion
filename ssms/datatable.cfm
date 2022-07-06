@@ -54,17 +54,17 @@
     <cfsavecontent variable="variables.sOutput"><cfoutput>{
         "sEcho": #form.sEcho#,
         "iTotalRecords": #getAllRecords.recordCount#,
-        "iTotalDisplayRecords": #rResult.recordcount#,
+        "iTotalDisplayRecords": #getAllRecords.recordcount#,
         "aaData": [
-        <cfloop query="rResult" startrow="#form.iDisplayStart+1#" endrow="#form.iDisplayStart+form.iDisplayLength#"><cfset variables.count=variables.count+1>
+        <cfloop query="#getAllRecords#" startrow="#form.iDisplayStart+1#" endrow="#form.iDisplayStart+form.iDisplayLength#"><cfset variables.count=variables.count+1>
     [<cfloop list="#variables.fieldlist#" index="variables.i">
     <!--- custom translations --->
-    "#rResult[variables.i][rResult.currentRow]#"
+    "#getAllRecords[variables.i][getAllRecords.currentRow]#"
     <cfif variables.i is not listLast(variables.fieldlist)>, </cfif>
     </cfloop>]
     
-    <cfif rResult.recordcount LT form.iDisplayStart+form.iDisplayLength>
-        <cfif variables.count is not rResult.recordcount>,</cfif>
+    <cfif getAllRecords.recordcount LT form.iDisplayStart+form.iDisplayLength>
+        <cfif variables.count is not getAllRecords.recordcount>,</cfif>
     <cfelse>
         <cfif variables.count LT form.iDisplayLength>,</cfif>
     </cfif>

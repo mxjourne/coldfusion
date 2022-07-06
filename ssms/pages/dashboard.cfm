@@ -1,7 +1,6 @@
 <!---  Contents of the page --->
 <cfsavecontent variable="pageContent">
 
-
     <div class="container">
         <div class="row mt-4">
             <div class="col-12">
@@ -39,6 +38,7 @@
             "aoColumns": [
         {"sName": "first_name", "sTitle": "first_name", "sWidth": "20%"},
         {"sName": "last_name", "sTitle": "last_name", "sWidth": "40%"},
+        {"sName": "subjects", "sTitle": "subjects", "sWidth": "40%"},
         ],
         "sPaginationType": "full_numbers",
         "oLanguage": {
