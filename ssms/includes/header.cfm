@@ -4,8 +4,8 @@
     <div class="container text-center text-white">
         <div class="col-12 p-4">
             <h3>
+                <!--- display app name from component --->
                 <cfscript>
-                    <!--- display app name from component --->
                     appname = createObject("component", "ssms.components.global");
                     writeOutput(appname.getAppName());
                 </cfscript>
@@ -23,7 +23,7 @@
                                 appmenus = createObject("component", "ssms.components.global");
                                 menus = appmenus.getAppMenus();
                                 
-                                <!--- menu array loop --->
+                                // menu array loop 
                                 menus.each( function( element, index) 
                                 {
                                     writeOutput("<li class='nav-item'><a href='' class='nav-link'>#element.menu#</a></li>");

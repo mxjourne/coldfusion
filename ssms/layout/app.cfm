@@ -27,7 +27,7 @@
 
 <cfif IsDefined("attributes.extraJs")>
 <!---  Output additional js from page --->
-<cfoutput>#attributes.includeJs#</cfoutput>
+<cfoutput>#attributes.extraJs#</cfoutput>
 </cfif>
 
 </body>
