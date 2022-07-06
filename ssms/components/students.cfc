@@ -15,4 +15,9 @@ component{
        return "Return students name here";
     }
 
+    public function getAllRecords()
+    {
+        return queryExecute( "SELECT * FROm students");
+    }
+
 }
