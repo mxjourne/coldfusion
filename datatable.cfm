@@ -23,12 +23,16 @@
 
     <!--- load component --->
     <cfscript>
-
         factory = createObject("component", "components.FactoryProducer");
         studentsFactory =  factory.getFactory(form.table);
         getRecords = createObject("component", "components.studentsFactory");
         getAllRecords = getRecords.getMethod().get();
-
+        if(len(form.sSearch))
+        {
+            getAllRecords = getAllRecords.filter((_getAllRecords) => {
+                return _getAllRecords.first_name.findNoCase("#form.sSearch#");
+            });
+        }
     </cfscript>
     
     <cfquery name="rResult" datasource="cfsqlserver">

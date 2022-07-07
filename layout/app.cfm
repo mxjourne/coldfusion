@@ -7,6 +7,10 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
 
+        <style>
+            .dataTables_wrapper .dataTables_filter{margin-bottom: 20px;}
+        </style>
+        
     </head>
 <body>
 
