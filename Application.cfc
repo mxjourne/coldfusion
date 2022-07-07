@@ -6,6 +6,6 @@ component{
 
     this.rootDir = getDirectoryFromPath(getCurrentTemplatePath());
 
-    this.mappings["/ssms"] = "#this.rootDir#ssms/";
+    this.mappings["/components"] = "#this.rootDir#components/";
 
 }

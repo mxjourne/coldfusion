@@ -6,7 +6,7 @@
             <h3>
                 <!--- display app name from component --->
                 <cfscript>
-                    appname = createObject("component", "ssms.components.global");
+                    appname = createObject("component", "components.global");
                     writeOutput(appname.getAppName());
                 </cfscript>
             </h3>
@@ -20,7 +20,7 @@
                     <ul class="nav navbar-nav">
                             <!--- display app menu arrays from component --->
                             <cfscript>
-                                appmenus = createObject("component", "ssms.components.global");
+                                appmenus = createObject("component", "components.global");
                                 menus = appmenus.getAppMenus();
                                 
                                 // menu array loop 
