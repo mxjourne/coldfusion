@@ -30,6 +30,9 @@ component extends="DatabaseMethods"{
                     }
                 });
                 querySetCell(studentQuery, "subjects", subject, studentQuery.currentRow);
+            }else{
+                lg = "#subjects#" == "" ? "no sbjects" : '';
+                querySetCell(studentQuery, "subjects", lg, studentQuery.currentRow);
             }
         }
         return studentQuery;
