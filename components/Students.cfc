@@ -34,4 +34,8 @@ component extends="DatabaseMethods"{
         }
         return studentQuery;
     }
+
+    function add(){}
+    function update(){}
+    function delete(){}
 }

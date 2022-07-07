@@ -5,7 +5,7 @@
  */
 abstract component DatabaseMethods{
     abstract function get();
-    //abstract function add();
-    //abstract function update();
-    //abstract function delete();
+    abstract function add();
+    abstract function update();
+    abstract function delete();
 } 

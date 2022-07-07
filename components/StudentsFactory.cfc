@@ -4,7 +4,7 @@
  * @author Paul Gatchalian  
  */
 component StudentsFactory extends="AbstractFactory" {
-    DatabaseMethods function getMethod(String method){
+    DatabaseMethods function getMethod(){
         return new Students();
     }
 }

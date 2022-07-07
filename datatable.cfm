@@ -27,8 +27,7 @@
         factory = createObject("component", "components.FactoryProducer");
         studentsFactory =  factory.getFactory(form.table);
         getRecords = createObject("component", "components.studentsFactory");
-        getAllRecords = getRecords.getMethod("get");
-        getAllRecords = getAllRecords.get();
+        getAllRecords = getRecords.getMethod().get();
 
     </cfscript>
     
