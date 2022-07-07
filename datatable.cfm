@@ -23,8 +23,13 @@
 
     <!--- load component --->
     <cfscript>
-        getRecords= createObject("component", form.components);
-        getAllRecords = getRecords.getAllRecords();
+
+        factory = createObject("component", "components.FactoryProducer");
+        studentsFactory =  factory.getFactory(form.table);
+        getRecords = createObject("component", "components.studentsFactory");
+        getAllRecords = getRecords.getMethod("get");
+        getAllRecords = getAllRecords.get();
+
     </cfscript>
     
     <cfquery name="rResult" datasource="cfsqlserver">
