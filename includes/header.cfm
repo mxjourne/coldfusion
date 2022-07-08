@@ -26,7 +26,7 @@
                                 // menu array loop 
                                 menus.each( function( element, index) 
                                 {
-                                    writeOutput("<li class='nav-item'><a href='' class='nav-link'>#element.menu#</a></li>");
+                                    writeOutput("<li class='nav-item'><a href='#element.link#' class='nav-link'>#element.menu#</a></li>");
                                 });
                             </cfscript>
                     </ul>

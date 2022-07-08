@@ -38,7 +38,8 @@
         </div>
         <div class="col-12 col-lg-6 form-group">
             <label for="exampleInputEmail1">Select Course</label>
-            <cfselect name="state" class="form-control"> 
+            <!---<cfselect name="state" class="form-control" bind="cfc:bindFcns.getstates()" bindonload="true"> --->
+            <cfselect name="course" class="form-control"> 
                 <option name="0">--select--</option> 
             </cfselect> 
         </div>
@@ -46,7 +47,7 @@
 
     <div class="row mt-5">
         <div class="col-12 form-group text-center">
-            <cfinput type = "hidden" name = "oncethrough" value = "Yes">
+            <cfinput type = "hidden" name = "isSubmitted" value = "1">
             <cfinput type = "submit" name = "submit" class="btn btn-primary btn-lg m-auto" value="Add New Student">
         </div>
     </div>
