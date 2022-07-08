@@ -39,15 +39,11 @@ component extends="DatabaseMethods"{
     }
 
     function add(){
-        if(IsDefined("Form.isSubmitted")){
-            Form.delete('isSubmitted', true);
-        }
-        if(IsDefined("Form.submit")){
-            Form.delete('submit', true);
-        }
-        if(IsDefined("Form.fieldnames")){
-            Form.delete('fieldnames', true);
-        }
+
+        Form.delete('isSubmitted', IsDefined("Form.isSubmitted") ? true : false);
+        Form.delete('submit', IsDefined("Form.submit") ? true : false);
+        Form.delete('fieldnames', IsDefined("Form.fieldnames") ? true : false);
+
         return Form;
     }
     function update(){}
