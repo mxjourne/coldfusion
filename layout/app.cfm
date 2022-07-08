@@ -8,7 +8,13 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
 
         <style>
+            body{overflow-x: hidden;}
             .dataTables_wrapper .dataTables_filter{margin-bottom: 20px;}
+            footer{
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
         </style>
         
     </head>

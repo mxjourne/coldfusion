@@ -2,8 +2,10 @@
 <cfsavecontent variable="pageContent">
     <div class="container">
         <div class="row mt-4">
+            <div class="col-12 text-right py-4">
+                <a href="./addstudent.cfm" class="btn btn-lg btn-primary">Add New Student</a>
+            </div>
             <div class="col-12">
-
             <!--- Students record table --->
             <table id="studentsTable" class="table table-striped table-bordered" style="width:100%">
                 <thead>
