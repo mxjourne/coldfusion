@@ -38,7 +38,18 @@ component extends="DatabaseMethods"{
         return studentQuery;
     }
 
-    function add(){}
+    function add(){
+        if(IsDefined("Form.isSubmitted")){
+            Form.delete('isSubmitted', true);
+        }
+        if(IsDefined("Form.submit")){
+            Form.delete('submit', true);
+        }
+        if(IsDefined("Form.fieldnames")){
+            Form.delete('fieldnames', true);
+        }
+        return Form;
+    }
     function update(){}
     function delete(){}
 }
