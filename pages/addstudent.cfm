@@ -48,7 +48,6 @@
     <div class="row mt-5">
         <div class="col-12 form-group text-center">
             <cfinput type = "hidden" name = "isSubmitted" value = "1">
-            <cfinput type = "hidden" name = "id" value = "1">
             <cfinput type = "submit" name = "submit" class="btn btn-primary btn-lg m-auto" value="Add New Student">
         </div>
     </div>
