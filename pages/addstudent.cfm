@@ -34,13 +34,13 @@
     <div class="row mb-3">
         <div class="col-12 col-lg-6 form-group">
             <label for="exampleInputEmail1">Email Address</label>
-            <cfinput type = "text" name = "address" class="form-control">
+            <cfinput type = "text" name = "email" class="form-control">
         </div>
         <div class="col-12 col-lg-6 form-group">
             <label for="exampleInputEmail1">Select Course</label>
             <!---<cfselect name="state" class="form-control" bind="cfc:bindFcns.getstates()" bindonload="true"> --->
             <cfselect name="course" class="form-control"> 
-                <option name="0">--select--</option> 
+                <option value="0">--select--</option> 
             </cfselect> 
         </div>
     </div>
