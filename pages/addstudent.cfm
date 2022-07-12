@@ -1,4 +1,14 @@
 
+<cfscript>
+    SetVariable("id", IsDefined("url.id") && len("#url.id#") > 0 ? "#url.id#" : null);
+    if(!isNull(id))
+    {
+        factory = createObject("component", "components.FactoryProducer");
+        studentsFactory =  factory.getFactory("students");
+        getRecords = createObject("component", "components.studentsFactory");
+        getRecord = getRecords.getMethod().fetch();
+    }
+</cfscript>
 <cfsavecontent variable="pageContent">
 <div class="container mt-5">
     <div class="row mb-5">
@@ -48,6 +58,7 @@
     <div class="row mt-5">
         <div class="col-12 form-group text-center">
             <cfinput type = "hidden" name = "isSubmitted" value = "1">
+            <cfinput type = "hidden" name = "id" value = "">
             <cfinput type = "submit" name = "submit" class="btn btn-primary btn-lg m-auto" value="Add New Student">
         </div>
     </div>
