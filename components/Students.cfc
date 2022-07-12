@@ -38,7 +38,14 @@ component extends="DatabaseMethods"{
         return studentQuery;
     }
 
-    function add(){
+    function fetch(string id)
+    {
+        studentQuery = queryExecute("SELECT * FROM students where id = ?", [id], {});
+        return studentQuery;
+    }
+
+    function add()
+    {
 
         // removed or unset not needed data from form
         Form.delete('isSubmitted', IsDefined("Form.isSubmitted") ? true : false);
@@ -60,6 +67,14 @@ component extends="DatabaseMethods"{
         
         return "success";
     }
-    function update(){}
-    function delete(){}
+
+    function update()
+    {
+
+    }
+
+    function delete()
+    {
+
+    }
 }
