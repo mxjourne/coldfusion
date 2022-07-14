@@ -1,4 +1,4 @@
-<cfif structKeyExists(form, "id" )>
+<cfif structKeyExists(form, "id" ) && len(Form.id) gt 0>
 
     <!--- updating record script here --->
 
