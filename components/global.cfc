@@ -6,10 +6,8 @@
 component Global{
 
     // Static Constructor
-    static {
-		static.SITE_NAME  = "Simple Student Management Information System";
-        static.MENUS = [{"menu"="Student Lists", "enabled"=1, "link" = "./dashboard.cfm"},{"menu"="Courses", "enabled"=1, "link" = "./courses.cfm"},{"menu"="Profile", "enabled"=1, "link" = "./profile.cfm"},{"menu"="Add Student", "enabled"=1, "link" = "./addstudent.cfm"},{"menu"="Contact", "enabled"=0, "link" = "./contact.cfm"}];
-	}
+	static.SITE_NAME  = "Simple Student Management Information System";
+    static.MENUS = [{"menu"="Student Lists", "enabled"=1, "link" = "./dashboard.cfm"},{"menu"="Courses", "enabled"=1, "link" = "./courses.cfm"},{"menu"="Profile", "enabled"=1, "link" = "./profile.cfm"},{"menu"="Add Student", "enabled"=1, "link" = "./addstudent.cfm"},{"menu"="Contact", "enabled"=0, "link" = "./contact.cfm"}];
 
     // method for getting app name
     public function getAppName()
