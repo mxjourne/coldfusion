@@ -79,7 +79,7 @@ CKEDITOR.editorConfig = function( config ) {
 	config.defaultLanguage = 'en';
 	
 	//default skin
-	config.skin = 'moono-lisa';
+	config.skin = 'moono';
 	
 	//start-up focus
 	config.startupFocus = false;

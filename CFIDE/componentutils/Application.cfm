@@ -1,5 +1,5 @@
 <!--- Import L10N Taglib (System Generated) --->
-<cfimport prefix="admin" taglib="../cftags/">
+<cfimport prefix="admin" taglib="../administrator/cftags/">
 
 <!--- Establish page locale, default is english (en). --->
 <cfparam name="request.locale" default="en">

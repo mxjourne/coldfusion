@@ -21,10 +21,19 @@
 -->
 
 <cfoutput>
-	<script src="#request.adminScriptSrcPath#ajaxtree/jquery.js"></script>
-	<script src="#request.adminScriptSrcPath#ajaxtree/jquery-ui.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="#request.adminScriptSrcPath#ajaxtree/jquery-ui.css" type="text/css" media="all" />
-	<script src="#request.adminScriptSrcPath#ajaxtree/jquery-highlight.js"></script>
+<cfif request.runtime.isSessionEnabled()>
+	<cfif StructKeyExists(session,"scriptsrc")>
+		<script src="#session.scriptsrc#ajax/jquery/jquery.js"></script>
+		<script src="#session.scriptsrc#ajax/jquery/jquery-ui.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="#session.scriptsrc#ajax/jquery/jquery-ui.css" type="text/css" media="all" />
+		<script src="#session.scriptsrc#ajax/jquery/jquery-highlight.js"></script>
+	<cfelse>
+		<script src="#scriptsrc#ajax/jquery/jquery.js"></script>
+		<script src="#sriptsrc#ajax/jquery/jquery-ui.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="#scriptsrc#ajax/jquery/jquery-ui.css" type="text/css" media="all" />
+		<script src="#scriptsrc#ajax/jquery/jquery-highlight.js"></script>
+	</cfif>
+</cfif>
 </cfoutput>
 
 <style type="text/css">
@@ -66,6 +75,7 @@
 			padding-right: 125px;
 	    }
 	}
+}
 </style>
 <script type="text/javascript">
 

@@ -9,24 +9,24 @@ written permission of Adobe.*/
 if(!ColdFusion.Menu){
 ColdFusion.Menu={};
 }
-ColdFusion.Menu.menuItemMouseOver=function(id,_8f1){
-var _8f2=document.getElementById(id);
-_8f2.tempfontcolor=_8f2.firstChild.style.color;
-if(_8f1){
-_8f2.firstChild.style.color=_8f1;
+ColdFusion.Menu.menuItemMouseOver=function(id,_29e){
+var _29f=document.getElementById(id);
+_29f.tempfontcolor=_29f.firstChild.style.color;
+if(_29e){
+_29f.firstChild.style.color=_29e;
 }
 };
 ColdFusion.Menu.menuItemMouseOut=function(id){
-var _8f4=document.getElementById(id);
-if(_8f4.tempfontcolor){
-_8f4.firstChild.style.color=_8f4.tempfontcolor;
+var _2a1=document.getElementById(id);
+if(_2a1.tempfontcolor){
+_2a1.firstChild.style.color=_2a1.tempfontcolor;
 }else{
-_8f4.firstChild.style.color="black";
+_2a1.firstChild.style.color="black";
 }
 };
-ColdFusion.Menu.initMenu=function(_8f5,_8f6){
-return new YAHOO.widget.Menu(_8f5,_8f6);
+ColdFusion.Menu.initMenu=function(_2a2,_2a3){
+return new YAHOO.widget.Menu(_2a2,_2a3);
 };
-ColdFusion.Menu.initMenuBar=function(_8f7,_8f8){
-return new YAHOO.widget.MenuBar(_8f7,_8f8);
+ColdFusion.Menu.initMenuBar=function(_2a4,_2a5){
+return new YAHOO.widget.MenuBar(_2a4,_2a5);
 };

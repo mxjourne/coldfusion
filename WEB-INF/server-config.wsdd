@@ -7,7 +7,7 @@
  <globalConfiguration>
    <requestFlow>
      <!-- This is the ColdFusion CFC handler -->
-     <handler type="java:coldfusion.xml.rpc.module.CFCHandler"/>
+     <handler type="java:coldfusion.xml.rpc.CFCHandler"/>
      <handler type="java:org.apache.axis.handlers.JWSHandler"/>
    </requestFlow>
 

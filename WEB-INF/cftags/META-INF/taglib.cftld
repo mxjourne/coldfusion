@@ -230,7 +230,7 @@
     </tag>
     <tag>
         <name>Report</name>
-        <tagclass>coldfusion.tagext.report.ReportTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.ReportTag</tagclass>
         <bodycontent>empty</bodycontent>
         <info>This tag is the interface to CFML Report Engine.
  &lt;p/&gt;
@@ -716,16 +716,6 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
         <attribute>
-            <name>timezone</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
-            <name>samlSettings</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
             <name>name</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
@@ -841,16 +831,6 @@
         </attribute>
         <attribute>
             <name>enableNullSupport</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
-            <name>useJavaAsRegexEngine</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
-            <name>preservecaseforstructkey</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
@@ -1297,11 +1277,6 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
         <attribute>
-            <name>base64</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
             <name>returnAsInputStream</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
@@ -1609,11 +1584,6 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
         <attribute>
-            <name>samesite</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
             <name>value</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
@@ -1903,11 +1873,6 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
         <attribute>
-            <name>returnType</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
             <name>cacheRegion</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
@@ -2088,7 +2053,7 @@
     </tag>
     <tag>
         <name>document</name>
-        <tagclass>coldfusion.tagext.document.DocumentTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.DocumentTag</tagclass>
         <bodycontent>JSP</bodycontent>
         <info>Converting CFML to Rich document Format</info>
         <attribute>
@@ -2299,7 +2264,7 @@
     </tag>
     <tag>
         <name>documentitem</name>
-        <tagclass>coldfusion.tagext.document.DocumentItemTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.DocumentItemTag</tagclass>
         <bodycontent>JSP</bodycontent>
         <info>Converting CFML to Rich document Format</info>
         <attribute>
@@ -2320,7 +2285,7 @@
     </tag>
     <tag>
         <name>documentsection</name>
-        <tagclass>coldfusion.tagext.document.DocumentSectionTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.DocumentSectionTag</tagclass>
         <bodycontent>JSP</bodycontent>
         <info>DocumentSectionTag will render/export its own section of html content and getting resources from its parent tag. it
  is like a mini CFDocument tag</info>
@@ -3456,7 +3421,7 @@
     </tag>
     <tag>
         <name>feed</name>
-        <tagclass>coldfusion.tagext.io.feed.FeedTag</tagclass>
+        <tagclass>coldfusion.tagext.io.FeedTag</tagclass>
         <info>&lt;cffeed&gt;
  Allows users to consume and create RSS and ATOM feeds.</info>
         <attribute>
@@ -3569,11 +3534,6 @@
         </attribute>
         <attribute>
             <name>block</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
-            <name>allowedExtensions</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
@@ -4056,11 +4016,6 @@
         </attribute>
         <attribute>
             <name>systemType</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
-            <name>fileNameEncoding</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
@@ -4649,11 +4604,6 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
         <attribute>
-            <name>returnType</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
             <name>cacheRegion</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
@@ -4781,7 +4731,7 @@
     </tag>
     <tag>
         <name>htmltopdf</name>
-        <tagclass>coldfusion.tagext.htmltopdf.HtmlToPdfTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.HtmlToPdfTag</tagclass>
         <bodycontent>JSP</bodycontent>
         <info>Converting HTML to PDF</info>
         <attribute>
@@ -4882,7 +4832,7 @@
     </tag>
     <tag>
         <name>htmltopdfitem</name>
-        <tagclass>coldfusion.tagext.htmltopdf.HtmlToPdfItemTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.HtmlToPdfItemTag</tagclass>
         <bodycontent>JSP</bodycontent>
         <info>Converting HTML to PDF</info>
         <attribute>
@@ -5269,7 +5219,7 @@
     </tag>
     <tag>
         <name>image</name>
-        <tagclass>coldfusion.tagext.image.ImageTag</tagclass>
+        <tagclass>coldfusion.tagext.io.ImageTag</tagclass>
         <info>Does image manipulation
  The attributes you use with cfimage depend on the value of the action
  attribute.</info>
@@ -5376,7 +5326,7 @@
     </tag>
     <tag>
         <name>imap</name>
-        <tagclass>coldfusion.tagext.mail.IMapTag</tagclass>
+        <tagclass>coldfusion.tagext.net.IMapTag</tagclass>
         <bodycontent>jsp</bodycontent>
         <info>Retrieves and deletes e-mail messages from a IMAP mail server.</info>
         <attribute>
@@ -5492,7 +5442,7 @@
     </tag>
     <tag>
         <name>imapfilter</name>
-        <tagclass>coldfusion.tagext.mail.IMapFilterTag</tagclass>
+        <tagclass>coldfusion.tagext.net.IMapFilterTag</tagclass>
         <bodycontent>jsp</bodycontent>
         <info>This tag is a child tag to set filter conditions for search operations. This tag can be embedded only within tag
  classes extended from ImapTag</info>
@@ -5895,11 +5845,6 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
         <attribute>
-            <name>returnType</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
             <name>cacheRegion</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
@@ -6098,19 +6043,6 @@
         </attribute>
         <attribute>
             <name>omit</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-    </tag>
-    <tag>
-        <name>java</name>
-        <tagclass>coldfusion.tagext.security.JavaTag</tagclass>
-        <bodycontent>JSP</bodycontent>
-        <info>CFJava Tag
- &lt;p/&gt;
- This tag allows executing java code</info>
-        <attribute>
-            <name>handle</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
@@ -6694,15 +6626,10 @@
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
-        <attribute>
-            <name>label</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
     </tag>
     <tag>
         <name>mail</name>
-        <tagclass>coldfusion.tagext.mail.MailTag</tagclass>
+        <tagclass>coldfusion.tagext.net.MailTag</tagclass>
         <bodycontent>JSP</bodycontent>
         <info>Sends e-mail messages by an SMTP server.</info>
         <attribute>
@@ -6898,7 +6825,7 @@
     </tag>
     <tag>
         <name>mailparam</name>
-        <tagclass>coldfusion.tagext.mail.MailParamTag</tagclass>
+        <tagclass>coldfusion.tagext.net.MailParamTag</tagclass>
         <bodycontent>empty</bodycontent>
         <info>Can either attach a file or add a header to a message. It is nested within a cfmail tag.
  You can use more than one cfmailparam tag within a cfmail tag.</info>
@@ -6955,7 +6882,7 @@
     </tag>
     <tag>
         <name>mailpart</name>
-        <tagclass>coldfusion.tagext.mail.MailPartTag</tagclass>
+        <tagclass>coldfusion.tagext.net.MailPartTag</tagclass>
         <bodycontent>JSP</bodycontent>
         <info>Specify a part mail of a mail message for CFMail tag.</info>
         <attribute>
@@ -7578,11 +7505,6 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
         <attribute>
-            <name>apiversion</name>
-            <required>true</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
             <name>scope</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
@@ -7782,7 +7704,7 @@
     </tag>
     <tag>
         <name>oldreport</name>
-        <tagclass>coldfusion.tagext.report.OldReportTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.OldReportTag</tagclass>
         <bodycontent>empty</bodycontent>
         <info>this tag invokes Java CFX's that implement the
  CustomTag interface.</info>
@@ -7906,7 +7828,7 @@
     </tag>
     <tag>
         <name>pdf</name>
-        <tagclass>coldfusion.tagext.pdf.PDFTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.PDFTag</tagclass>
         <info>PDFTag
  &lt;p/&gt;
  Created on Aug 16, 2006</info>
@@ -8328,7 +8250,7 @@
     </tag>
     <tag>
         <name>pdfform</name>
-        <tagclass>coldfusion.tagext.pdf.PDFFormTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.PDFFormTag</tagclass>
         <info>PdfForm Tag which allows  prepopulation/extraction of data in existing XFA
  or XFDF pdf forms</info>
         <attribute>
@@ -8384,7 +8306,7 @@
     </tag>
     <tag>
         <name>pdfformparam</name>
-        <tagclass>coldfusion.tagext.pdf.PDFFormParamTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.PDFFormParamTag</tagclass>
         <info>Tag for specifying individual form parameters</info>
         <attribute>
             <name>name</name>
@@ -8409,7 +8331,7 @@
     </tag>
     <tag>
         <name>pdfparam</name>
-        <tagclass>coldfusion.tagext.pdf.PDFParamTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.PDFParamTag</tagclass>
         <info>PDFParamTag
  &lt;p/&gt;
  Created on Aug 16, 2006</info>
@@ -8496,7 +8418,7 @@
     </tag>
     <tag>
         <name>pdfsubform</name>
-        <tagclass>coldfusion.tagext.pdf.PDFSubformTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.PDFSubformTag</tagclass>
         <info>Tag for grouping PDFFormParamTag(PDF form params). This tag can be used only inside
  PDFFormTag and PDFSubformTag</info>
         <attribute>
@@ -8563,7 +8485,7 @@
     </tag>
     <tag>
         <name>pop</name>
-        <tagclass>coldfusion.tagext.mail.PopTag</tagclass>
+        <tagclass>coldfusion.tagext.net.PopTag</tagclass>
         <bodycontent>jsp</bodycontent>
         <info>Retrieves and deletes e-mail messages from a POP mail server.</info>
         <attribute>
@@ -8654,7 +8576,7 @@
     </tag>
     <tag>
         <name>popfilter</name>
-        <tagclass>coldfusion.tagext.mail.PopFilterTag</tagclass>
+        <tagclass>coldfusion.tagext.net.PopFilterTag</tagclass>
         <bodycontent>jsp</bodycontent>
         <info>This tag is a child tag to set filter conditions for search operations. This tag can be embedded only within tag
  classes extended from ImapTag</info>
@@ -8681,7 +8603,7 @@
     </tag>
     <tag>
         <name>presentation</name>
-        <tagclass>coldfusion.tagext.presentation.PresentationTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.PresentationTag</tagclass>
         <bodycontent>JSP</bodycontent>
         <info>Presentation tag that generates breeze presentation from html content. For each slide, there should be
  presentationslide tag.
@@ -8854,7 +8776,7 @@
     </tag>
     <tag>
         <name>presentationSlide</name>
-        <tagclass>coldfusion.tagext.presentation.PresentationSlideTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.PresentationSlideTag</tagclass>
         <bodycontent>JSP</bodycontent>
         <info>Presentation slide tag that represents a slide of the presentation. Each slide will have html content as its body.
  With each slide you can specify audio and video file that will be played along with the slide.
@@ -8957,7 +8879,7 @@
     </tag>
     <tag>
         <name>presenter</name>
-        <tagclass>coldfusion.tagext.presentation.PresenterTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.PresenterTag</tagclass>
         <bodycontent>JSP</bodycontent>
         <info>Specifies the presenters to the presentation tag. A presentation can have one or more presenters.
  Date: Feb 19, 2006</info>
@@ -8994,7 +8916,7 @@
     </tag>
     <tag>
         <name>print</name>
-        <tagclass>coldfusion.tagext.print.PrintTag</tagclass>
+        <tagclass>coldfusion.tagext.lang.PrintTag</tagclass>
         <info>PrintTag
  &lt;p/&gt;
  Created on January 16, 2007</info>
@@ -9264,11 +9186,6 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
         <attribute>
-            <name>returnType</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
             <name>cacheRegion</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
@@ -9442,7 +9359,7 @@
     </tag>
     <tag>
         <name>reportparam</name>
-        <tagclass>coldfusion.tagext.report.ReportParam</tagclass>
+        <tagclass>coldfusion.tagext.lang.ReportParam</tagclass>
         <bodycontent>empty</bodycontent>
         <info>cfreportparam is used to specify the parameters necessary to control report runtime behavior</info>
         <attribute>
@@ -9568,11 +9485,6 @@
         </attribute>
         <attribute>
             <name>publish</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
-            <name>requestTimeOut</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
@@ -10127,11 +10039,6 @@
         </attribute>
         <attribute>
             <name>username</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
-            <name>returnType</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
@@ -10870,11 +10777,6 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
         <attribute>
-            <name>returnType</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
             <name>cacheRegion</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
@@ -11179,7 +11081,7 @@
     </tag>
     <tag>
         <name>zip</name>
-        <tagclass>coldfusion.tagext.zip.ZipTag</tagclass>
+        <tagclass>coldfusion.tagext.io.ZipTag</tagclass>
         <bodycontent>JSP</bodycontent>
         <info>Handles Zip/Jar related operations. Operations like create, list, delete, extract and update can be performed on
  a Zip file.
@@ -11265,15 +11167,10 @@
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
-        <attribute>
-            <name>maxUnzipRatio</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
     </tag>
     <tag>
         <name>zipParam</name>
-        <tagclass>coldfusion.tagext.zip.ZipParamTag</tagclass>
+        <tagclass>coldfusion.tagext.io.ZipParamTag</tagclass>
         <bodycontent>empty</bodycontent>
         <info>Param to cfzip tag. Parameters required by the cfzip will be provided using this tag. cfzip tag can have
  multiple cfzipParam tag as its child tag.

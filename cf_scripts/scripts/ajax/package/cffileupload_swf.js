@@ -24,262 +24,262 @@ var defaultClearIcon=_cf_ajaxscriptsrc+"/resources/cf/images/fileupload/clear.gi
 var defaultDeleteIcon=_cf_ajaxscriptsrc+"/resources/cf/images/fileupload/delete.png";
 var defaultUploadSize=10*1024*1024;
 var fileUploadPrefix="cf_fileUpload_";
-ColdFusion.FileUpload.create=function(_51c,_51d,_51e,_51f,_520,_521,_522,_523,_524,_525,_526,_527,_528,_529,_52a,_52b,_52c,_52d,_52e,_52f,_530,_531,_532,_533,_534,_535,_536,_537,_538,_539){
-var _53a={};
-_53a.uploadDivId=_51c;
-_53a.fileUploadName=fileUploadPrefix+_51c;
-_53a.url_withoutQuery=_51d;
-_53a.url_queryString=_51e;
-_53a.url_CF_cookie=_51f;
-_53a.url=$FS.constructUrl(_51d,_51e,_51f);
-_53a.onCompleteHandler=_527;
-_53a.onUploadCompleteHandler=_528;
-_53a.onErrorHandler=_529;
-_53a.progressbar=_534;
-if(_52c==null){
-_52c="";
+ColdFusion.FileUpload.create=function(_2a6,_2a7,_2a8,_2a9,_2aa,_2ab,_2ac,_2ad,_2ae,_2af,_2b0,_2b1,_2b2,_2b3,_2b4,_2b5,_2b6,_2b7,_2b8,_2b9,_2ba,_2bb,_2bc,_2bd,_2be,_2bf,_2c0,_2c1,_2c2,_2c3){
+var _2c4={};
+_2c4.uploadDivId=_2a6;
+_2c4.fileUploadName=fileUploadPrefix+_2a6;
+_2c4.url_withoutQuery=_2a7;
+_2c4.url_queryString=_2a8;
+_2c4.url_CF_cookie=_2a9;
+_2c4.url=$FS.constructUrl(_2a7,_2a8,_2a9);
+_2c4.onCompleteHandler=_2b1;
+_2c4.onUploadCompleteHandler=_2b2;
+_2c4.onErrorHandler=_2b3;
+_2c4.progressbar=_2be;
+if(_2b6==null){
+_2b6="";
 }
-_53a.bgcolor=_52c;
-if(_52d==null){
-_52d="";
+_2c4.bgcolor=_2b6;
+if(_2b7==null){
+_2b7="";
 }
-_53a.selectcolor=_52d;
-if(_52e==null){
-_52e="";
+_2c4.selectcolor=_2b7;
+if(_2b8==null){
+_2b8="";
 }
-_53a.rollovercolor=_52e;
-if(_52f==null){
-_52f="";
+_2c4.rollovercolor=_2b8;
+if(_2b9==null){
+_2b9="";
 }
-_53a.textcolor=_52f;
-if(_532==null){
-_532="left";
+_2c4.textcolor=_2b9;
+if(_2bc==null){
+_2bc="left";
 }
-_53a.titletextalign=_532;
-if(_530==null){
-_530="";
+_2c4.titletextalign=_2bc;
+if(_2ba==null){
+_2ba="";
 }
-_53a.titletextcolor=_530;
-if(_531==null){
-_531="";
+_2c4.titletextcolor=_2ba;
+if(_2bb==null){
+_2bb="";
 }
-_53a.headercolor=_531;
-_53a.bgcolor=_52c;
-_53a.bgcolor=_52c;
-if(_533==null){
-_533="";
+_2c4.headercolor=_2bb;
+_2c4.bgcolor=_2b6;
+_2c4.bgcolor=_2b6;
+if(_2bd==null){
+_2bd="";
 }
-_53a.fileFilter=_533;
-_53a.disableUploadButton=_536;
-if(_538==null||typeof _538=="undefined"){
-_538="window";
+_2c4.fileFilter=_2bd;
+_2c4.disableUploadButton=_2c0;
+if(_2c2==null||typeof _2c2=="undefined"){
+_2c2="window";
 }
-_53a.wmode=_538;
-_53a.stopOnError=_537;
-if(_520==null||typeof _520==="undefined"){
-_520=defaultAddButtonLabel;
+_2c4.wmode=_2c2;
+_2c4.stopOnError=_2c1;
+if(_2aa==null||typeof _2aa==="undefined"){
+_2aa=defaultAddButtonLabel;
 }
-_53a.addIcon=defaultAddIcon;
-_53a.addButtonLabel=_520;
-if(_522==null||typeof _522==="undefined"){
-_522=defaultUploadButtonLabel;
+_2c4.addIcon=defaultAddIcon;
+_2c4.addButtonLabel=_2aa;
+if(_2ac==null||typeof _2ac==="undefined"){
+_2ac=defaultUploadButtonLabel;
 }
-_53a.uploadButtonLabel=_522;
-_53a.uploadIcon=defaultUploadIcon;
-if(_524==null||typeof _524==="undefined"){
-_524="File Upload ";
+_2c4.uploadButtonLabel=_2ac;
+_2c4.uploadIcon=defaultUploadIcon;
+if(_2ae==null||typeof _2ae==="undefined"){
+_2ae="File Upload ";
 }
-_53a.title=_524;
-_53a.swfLocation=$FS.defaultSWFLocation;
-if(_521==null||typeof _521==="undefined"){
-_521=defaultClearButtonLabel;
+_2c4.title=_2ae;
+_2c4.swfLocation=$FS.defaultSWFLocation;
+if(_2ab==null||typeof _2ab==="undefined"){
+_2ab=defaultClearButtonLabel;
 }
-_53a.clearButtonLabel=_521;
-_53a.clearIcon=defaultClearIcon;
-if(_523==null||typeof _523==="undefined"){
-_523=defaultDeleteButtonLabel;
+_2c4.clearButtonLabel=_2ab;
+_2c4.clearIcon=defaultClearIcon;
+if(_2ad==null||typeof _2ad==="undefined"){
+_2ad=defaultDeleteButtonLabel;
 }
-_53a.deleteButtonLabel=_523;
-_53a.deleteIcon=defaultDeleteIcon;
-if(_525==null||!typeof _525==="Number"){
-_525=-1;
+_2c4.deleteButtonLabel=_2ad;
+_2c4.deleteIcon=defaultDeleteIcon;
+if(_2af==null||!typeof _2af==="Number"){
+_2af=-1;
 }
-_53a.maxFileSelect=_525;
-if(_526==null||!typeof _526==="number"){
-_526=defaultUploadSize;
+_2c4.maxFileSelect=_2af;
+if(_2b0==null||!typeof _2b0==="number"){
+_2b0=defaultUploadSize;
 }
-_53a.maxUploadSize=_526;
-if(_52a==null||typeof _52a==="undefined"){
-_52a=420;
+_2c4.maxUploadSize=_2b0;
+if(_2b4==null||typeof _2b4==="undefined"){
+_2b4=420;
 }
-_53a.widthInPx=_52a+"px";
-_53a.width=_52a;
-if(_52b==null||typeof _52b==="undefined"){
-_52b=300;
+_2c4.widthInPx=_2b4+"px";
+_2c4.width=_2b4;
+if(_2b5==null||typeof _2b5==="undefined"){
+_2b5=300;
 }
-_53a.heightInPx=_52b+"px";
-_53a.height=_52b;
-_53a.align=_539;
-ColdFusion.objectCache[_51c]=_53a;
-ColdFusion.objectCache[_53a.fileUploadName]=_53a;
-var _53b=$FS.constructMarkup(_53a);
-var _53c=document.getElementById(_51c);
-_53c.innerHTML=_53b;
-ColdFusion.Log.info("fileupload.initialized","widget",[_51c]);
+_2c4.heightInPx=_2b5+"px";
+_2c4.height=_2b5;
+_2c4.align=_2c3;
+ColdFusion.objectCache[_2a6]=_2c4;
+ColdFusion.objectCache[_2c4.fileUploadName]=_2c4;
+var _2c5=$FS.constructMarkup(_2c4);
+var _2c6=document.getElementById(_2a6);
+_2c6.innerHTML=_2c5;
+ColdFusion.Log.info("fileupload.initialized","widget",[_2a6]);
 };
-$FS.constructMarkup=function(_53d){
+$FS.constructMarkup=function(_2c7){
 var str="";
 if(isIE&&isWin&&!isOpera){
-str+="<object width=\""+_53d.width+"\" height=\""+_53d.height+"\"";
-str+=" id=\""+_53d.fileUploadName+"\" name=\""+_53d.playerName+"\" type=\"application/x-shockwave-flash\" classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" ";
-str+=" data=\""+_53d.swfLocation+"\">";
-str+="<param name=\"movie\" value=\""+_53d.swfLocation+"\" />";
-str+="<param name=\"quality\" value=\""+_53d.quality+"\" />";
-str+="<param name=\"allowFullScreen\" value=\""+_53d.fullScreen+"\" />";
+str+="<object width=\""+_2c7.width+"\" height=\""+_2c7.height+"\"";
+str+=" id=\""+_2c7.fileUploadName+"\" name=\""+_2c7.playerName+"\" type=\"application/x-shockwave-flash\" classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" ";
+str+=" data=\""+_2c7.swfLocation+"\">";
+str+="<param name=\"movie\" value=\""+_2c7.swfLocation+"\" />";
+str+="<param name=\"quality\" value=\""+_2c7.quality+"\" />";
+str+="<param name=\"allowFullScreen\" value=\""+_2c7.fullScreen+"\" />";
 str+="<param name=\"allowScriptAccess\" value=\"sameDomain\" />";
-str+="<param name=\"wmode\" value=\""+_53d.wmode+"\" />";
-str+="<param name=\"flashvars\" value=\"uniqueid="+_53d.fileUploadName+"&url="+_53d.url+"&addLabel="+_53d.addButtonLabel+"&deleteLabel="+_53d.deleteButtonLabel;
-str+="&clearLabel="+_53d.clearButtonLabel+"&uploadLabel="+_53d.uploadButtonLabel+"&maxUploadSize="+_53d.maxUploadSize+"&maxFileSelect="+_53d.maxFileSelect+"&progress="+_53d.progressbar;
-str+="&stopOnError="+_53d.stopOnError+"&hideUpload="+_53d.disableUploadButton+"&bgcolor="+_53d.bgcolor+"&fileFilter="+_53d.fileFilter+"&deleteIcon="+_53d.deleteIcon+"&title="+_53d.title;
-str+="&uploadIcon="+_53d.uploadIcon+"&textcolor="+_53d.textcolor+"&titletextcolor="+_53d.titletextcolor+"&headercolor="+_53d.headercolor+"&titletextalign="+_53d.titletextalign+"&rollovercolor="+_53d.rollovercolor+"&selectcolor="+_53d.selectcolor+"\" />";
+str+="<param name=\"wmode\" value=\""+_2c7.wmode+"\" />";
+str+="<param name=\"flashvars\" value=\"uniqueid="+_2c7.fileUploadName+"&url="+_2c7.url+"&addLabel="+_2c7.addButtonLabel+"&deleteLabel="+_2c7.deleteButtonLabel;
+str+="&clearLabel="+_2c7.clearButtonLabel+"&uploadLabel="+_2c7.uploadButtonLabel+"&maxUploadSize="+_2c7.maxUploadSize+"&maxFileSelect="+_2c7.maxFileSelect+"&progress="+_2c7.progressbar;
+str+="&stopOnError="+_2c7.stopOnError+"&hideUpload="+_2c7.disableUploadButton+"&bgcolor="+_2c7.bgcolor+"&fileFilter="+_2c7.fileFilter+"&deleteIcon="+_2c7.deleteIcon+"&title="+_2c7.title;
+str+="&uploadIcon="+_2c7.uploadIcon+"&textcolor="+_2c7.textcolor+"&titletextcolor="+_2c7.titletextcolor+"&headercolor="+_2c7.headercolor+"&titletextalign="+_2c7.titletextalign+"&rollovercolor="+_2c7.rollovercolor+"&selectcolor="+_2c7.selectcolor+"\" />";
 str+="</object>";
 }else{
-str="<embed src=\""+_53d.swfLocation+"\" allowScriptAccess=\"samedomain\" pluginspage=\"http://www.adobe.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" wmode=\""+_53d.wmode+"\"";
-str+=" name=\""+_53d.fileUploadName+"\" width=\""+_53d.width+"\" height=\""+_53d.height+"\" quality=\" "+_53d.quality+"\"";
-str+=" flashvars=\"uniqueid="+_53d.fileUploadName+"&url="+_53d.url+"&addLabel="+_53d.addButtonLabel+"&deleteLabel="+_53d.deleteButtonLabel;
-str+="&clearLabel="+_53d.clearButtonLabel+"&uploadLabel="+_53d.uploadButtonLabel+"&maxUploadSize="+_53d.maxUploadSize+"&maxFileSelect="+_53d.maxFileSelect+"&progress="+_53d.progressbar;
-str+="&stopOnError="+_53d.stopOnError+"&hideUpload="+_53d.disableUploadButton+"&bgcolor="+_53d.bgcolor+"&fileFilter="+_53d.fileFilter+"&deleteIcon="+_53d.deleteIcon+"&title="+_53d.title;
-str+="&uploadIcon="+_53d.uploadIcon+"&textcolor="+_53d.textcolor+"&titletextcolor="+_53d.titletextcolor+"&headercolor="+_53d.headercolor+"&titletextalign="+_53d.titletextalign+"&rollovercolor="+_53d.rollovercolor+"&selectcolor="+_53d.selectcolor+"\" />";
+str="<embed src=\""+_2c7.swfLocation+"\" allowScriptAccess=\"samedomain\" pluginspage=\"http://www.adobe.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" wmode=\""+_2c7.wmode+"\"";
+str+=" name=\""+_2c7.fileUploadName+"\" width=\""+_2c7.width+"\" height=\""+_2c7.height+"\" quality=\" "+_2c7.quality+"\"";
+str+=" flashvars=\"uniqueid="+_2c7.fileUploadName+"&url="+_2c7.url+"&addLabel="+_2c7.addButtonLabel+"&deleteLabel="+_2c7.deleteButtonLabel;
+str+="&clearLabel="+_2c7.clearButtonLabel+"&uploadLabel="+_2c7.uploadButtonLabel+"&maxUploadSize="+_2c7.maxUploadSize+"&maxFileSelect="+_2c7.maxFileSelect+"&progress="+_2c7.progressbar;
+str+="&stopOnError="+_2c7.stopOnError+"&hideUpload="+_2c7.disableUploadButton+"&bgcolor="+_2c7.bgcolor+"&fileFilter="+_2c7.fileFilter+"&deleteIcon="+_2c7.deleteIcon+"&title="+_2c7.title;
+str+="&uploadIcon="+_2c7.uploadIcon+"&textcolor="+_2c7.textcolor+"&titletextcolor="+_2c7.titletextcolor+"&headercolor="+_2c7.headercolor+"&titletextalign="+_2c7.titletextalign+"&rollovercolor="+_2c7.rollovercolor+"&selectcolor="+_2c7.selectcolor+"\" />";
 }
 return str;
 };
-$FS.constructUrl=function(_53f,_540,_541){
-var url=_53f;
-if(_540!=null){
-url+="?"+_540;
-if(_541!=null){
-url+="%26"+_541;
+$FS.constructUrl=function(_2c9,_2ca,_2cb){
+var url=_2c9;
+if(_2ca!=null){
+url+="?"+_2ca;
+if(_2cb!=null){
+url+="%26"+_2cb;
 }
 }else{
-if(_541!=null){
-url+="?"+_541;
+if(_2cb!=null){
+url+="?"+_2cb;
 }
 }
 return url;
 };
-coldfusion_FileUploadSwf_complete=function(name,_544){
-var _545=$FS.getFileUploadComponent(name);
-var _546=ColdFusion.objectCache[name];
-var _547=_546.onCompleteHandler;
-if(_547!=null&&typeof _547=="function"){
-_547.call(this,_544);
+coldfusion_FileUploadSwf_complete=function(name,_2ce){
+var _2cf=$FS.getFileUploadComponent(name);
+var _2d0=ColdFusion.objectCache[name];
+var _2d1=_2d0.onCompleteHandler;
+if(_2d1!=null&&typeof _2d1=="function"){
+_2d1.call(this,_2ce);
 }
-$FS.addResultToArray(_544,_546);
+$FS.addResultToArray(_2ce,_2d0);
 };
-coldfusion_FileUploadSwf_onError=function(name,_549){
-var _54a=$FS.getFileUploadComponent(name);
-var _54b=ColdFusion.objectCache[name];
-var _54c=_54b.onErrorHandler;
-if(_54c!=null&&typeof _54c=="function"){
-_54c.call(this,_549);
+coldfusion_FileUploadSwf_onError=function(name,_2d3){
+var _2d4=$FS.getFileUploadComponent(name);
+var _2d5=ColdFusion.objectCache[name];
+var _2d6=_2d5.onErrorHandler;
+if(_2d6!=null&&typeof _2d6=="function"){
+_2d6.call(this,_2d3);
 }
-$FS.addResultToArray(_549,_54b);
+$FS.addResultToArray(_2d3,_2d5);
 };
 coldfusion_FileUploadSwf_UploadCompete=function(name){
-var _54e=$FS.getFileUploadComponent(name);
-var _54f=ColdFusion.objectCache[name];
-var _550=_54f.onUploadCompleteHandler;
-var _551=_54f.resultArray;
-if(_550!=null&&typeof _550=="function"){
-_550.call(this,_551);
+var _2d8=$FS.getFileUploadComponent(name);
+var _2d9=ColdFusion.objectCache[name];
+var _2da=_2d9.onUploadCompleteHandler;
+var _2db=_2d9.resultArray;
+if(_2da!=null&&typeof _2da=="function"){
+_2da.call(this,_2db);
 }
-_54f.resultArray=new Array();
+_2d9.resultArray=new Array();
 };
-$FS.addResultToArray=function(_552,_553){
-var _554=_553.resultArray;
-if(_554==null||typeof _554=="undefined"){
-_554=_553.resultArray=new Array();
+$FS.addResultToArray=function(_2dc,_2dd){
+var _2de=_2dd.resultArray;
+if(_2de==null||typeof _2de=="undefined"){
+_2de=_2dd.resultArray=new Array();
 }
-_554.push(_552);
+_2de.push(_2dc);
 };
 $FS.cancelUpload=function(name){
-var _556=fileUploadPrefix+name;
-var _557=$FS.getFileUploadComponent(_556);
-if(_557!=null){
-_557.cancelFileUpload();
+var _2e0=fileUploadPrefix+name;
+var _2e1=$FS.getFileUploadComponent(_2e0);
+if(_2e1!=null){
+_2e1.cancelFileUpload();
 }else{
 ColdFusion.handleError(null,"fileupload.cancelupload.notfound","widget",[name],null,null,true);
 }
 ColdFusion.Log.info("fileupload.cancelupload.cancelled","widget",[name]);
 };
 $FS.getSelectedFiles=function(name){
-var _559=fileUploadPrefix+name;
-var _55a=$FS.getFileUploadComponent(_559);
-if(_55a!=null){
-return _55a.getSelectedFileArray();
+var _2e3=fileUploadPrefix+name;
+var _2e4=$FS.getFileUploadComponent(_2e3);
+if(_2e4!=null){
+return _2e4.getSelectedFileArray();
 }else{
 ColdFusion.handleError(null,"fileupload.getSelectedFiles.notfound","widget",[name],null,null,true);
 }
 ColdFusion.Log.info("fileupload.getSelectedFiles.selected","widget",[name]);
 };
 $FS.clearAllFiles=function(name){
-var _55c=fileUploadPrefix+name;
-var _55d=$FS.getFileUploadComponent(_55c);
-if(_55d!=null){
-_55d.clearAllUpload();
+var _2e6=fileUploadPrefix+name;
+var _2e7=$FS.getFileUploadComponent(_2e6);
+if(_2e7!=null){
+_2e7.clearAllUpload();
 }else{
 ColdFusion.handleError(null,"fileupload.clearallfiles.notfound","widget",[name],null,null,true);
 }
 ColdFusion.Log.info("fileupload.clearallfiles.cleared","widget",[name]);
 };
 $FS.setURL=function(name,src){
-var _560=$FS.getFileUploadComponent(fileUploadPrefix+name);
-var _561=ColdFusion.objectCache[name];
-if(_561==null||typeof (_561)=="undefined"){
+var _2ea=$FS.getFileUploadComponent(fileUploadPrefix+name);
+var _2eb=ColdFusion.objectCache[name];
+if(_2eb==null||typeof (_2eb)=="undefined"){
 ColdFusion.handleError(null,"fileupload.setURL.notfound","widget",[name],null,null,true);
 }
 if(!src||src.length==0){
 ColdFusion.handleError(null,"fileupload.setURL.invalidurl","widget",[name],null,null,true);
 }
-var _562=null;
+var _2ec=null;
 if(src.indexOf("?")>0){
-_562=src.substring(src.indexOf("?")+1);
-_562=escape(_562);
+_2ec=src.substring(src.indexOf("?")+1);
+_2ec=escape(_2ec);
 src=src.substring(0,src.indexOf("?"));
 }
 if(src.charAt(0)!="/"&&src.indexOf("://")<0){
-var _563=_561.url_withoutQuery;
-_563=unescape(_563);
-var _564="";
-if(_563||_563.indexOf("/")>-1){
-_564=_563.substring(0,_563.lastIndexOf("/")+1);
+var _2ed=_2eb.url_withoutQuery;
+_2ed=unescape(_2ed);
+var _2ee="";
+if(_2ed||_2ed.indexOf("/")>-1){
+_2ee=_2ed.substring(0,_2ed.lastIndexOf("/")+1);
 }
-var _565=_564+src;
-var _566=_565.split("/");
-var _567=new Array();
-var _568=0;
-for(var i=0;i<_566.length;i++){
-if(_566[i]==".."){
-_567[--_568]="";
+var _2ef=_2ee+src;
+var _2f0=_2ef.split("/");
+var _2f1=new Array();
+var _2f2=0;
+for(var i=0;i<_2f0.length;i++){
+if(_2f0[i]==".."){
+_2f1[--_2f2]="";
 }else{
-_567[_568++]=_566[i];
+_2f1[_2f2++]=_2f0[i];
 }
 }
-src=_567[0];
-for(var i=1;i<_568;i++){
-src=src+"/"+_567[i];
+src=_2f1[0];
+for(var i=1;i<_2f2;i++){
+src=src+"/"+_2f1[i];
 }
 }
-var _56a=$FS.constructUrl(src,_562,_561.url_CF_cookie);
-_561.url=_56a;
-_560.setSrc(_56a);
-ColdFusion.Log.info("fileupload.setURL.urlset","widget",[name,_56a]);
+var _2f4=$FS.constructUrl(src,_2ec,_2eb.url_CF_cookie);
+_2eb.url=_2f4;
+_2ea.setSrc(_2f4);
+ColdFusion.Log.info("fileupload.setURL.urlset","widget",[name,_2f4]);
 };
 $FS.startUpload=function(name){
-var _56c=fileUploadPrefix+name;
-var _56d=$FS.getFileUploadComponent(_56c);
-if(_56d!=null){
-_56d.submitUploadForm();
+var _2f6=fileUploadPrefix+name;
+var _2f7=$FS.getFileUploadComponent(_2f6);
+if(_2f7!=null){
+_2f7.submitUploadForm();
 }else{
 ColdFusion.handleError(null,"fileupload.startupload.notfound","widget",[name],null,null,true);
 }

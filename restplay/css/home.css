@@ -224,18 +224,9 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 	/*transition: width 0.3s linear ;*/
 	vertical-align: top;
 	margin-right: 3px;
-	background-image: url('../images/search-icon.png');
-    background-repeat: no-repeat;
-    background-position: 95% 50%;
-    background-size: 21px;
 }
 .cfrest .app-search.no-add {
 	width: 100%;
-}
-
-.cfrest .app-search::placeholder{
-	font-style: normal;
-	color: #757575;
 }
 
 .cfrest .add-app-c {
@@ -245,6 +236,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 	border: 1px solid #aaa;
 	border-radius: 5px;
 }
+
 
 .cfrest .add-app {
 	display: inline-block;
@@ -468,19 +460,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 .cfrest .url-c {
 	padding: 10px;
 }
-
-.cfrest .request_type_label{
-	display: inline-block;
-	width: 10%;
-	margin-right: 10px;
-	color: #767476;
-}
-
-.cfrest .request_url_label{
-	display: inline-block;
-	color: #767476;
-}
-
 .cfrest .method-select {
 	display: inline-block;
 	width: 10%;
@@ -555,7 +534,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 	padding: 0px 0px 2px 0px;
 	/*border-right: 1px solid #ddd;*/
 	font-size: 14px;
-	color: #757575;
+	color: #aaa;
 	margin: 0px 10px 5px 10px;
 
 }
@@ -618,26 +597,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 /*.cfrest .request-parameters .header-field {
 	width: 45%;
 }*/
-
-.cfrest .header_label  {
-	width: 45%;
-	display: inline-block;
-	vertical-align: middle;
-	color: #767476
-}
-.cfrest .parameter_label  {
-	width: 45%;
-	display: inline-block;
-	vertical-align: middle;
-	color: #767476
-}
- .cfrest .value_label {
-	width: 45%;
-	display: inline-block;
-	vertical-align: middle;
-	color: #767476
-}
-
 ::-webkit-input-placeholder {
    font-style: italic;
    color: #bbb;
@@ -657,12 +616,13 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 .cfrest .header-field.dummy {
 	font-style: italic;
 	background-color: #f7f7f7;
-	color: #757575;
+	color: #bbb;
     border-color: #ddd;
     cursor: pointer;
 }
 .cfrest .delete-header {
 	display: inline-block;
+	background-image: url(../images/delete.png);
 	width: 20px;
     height: 20px;
     background-repeat: no-repeat;
@@ -958,7 +918,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
 .cfrest .toggle-bar {
-	background-color: #757575;
+	background-color: #bebebe;
 	padding: 5px 10px;
 }
 .cfrest .collapsed .toggle-bar {
@@ -973,7 +933,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 .cfrest .app-label {
 	float: left;
-	color: #ffffff;
+	color: #fff;
 }
 .cfrest .toggle-icon.collapsed {
 	opacity: 0.4;
@@ -1012,8 +972,4 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 .cfrest .request-headers {
 	margin: 10px 0;
-}
-.cfrest .response_title, .cfrest .request_title {
-	font-size: 14px;
-	font-weight: 700;
 }

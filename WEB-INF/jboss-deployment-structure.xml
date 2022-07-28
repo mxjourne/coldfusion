@@ -7,11 +7,5 @@
                 </paths>
             </system>
         </dependencies>
-	<resources>
-	  <resource-root path="WEB-INF/cfusion/lib/serializer.jar" />
-	  <resource-root path="WEB-INF/cfusion/lib/xercesImpl.jar" />
-	  <resource-root path="WEB-INF/cfusion/lib/xalan.jar" />
-	  <resource-root path="WEB-INF/cfusion/lib/xml-apis.jar" />
-    </resources>
     </deployment>
 </jboss-deployment-structure>

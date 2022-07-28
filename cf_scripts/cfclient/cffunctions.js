@@ -629,22 +629,6 @@ function isArray(arrayObj)
 	return false;	
 }
 
-function isArray(arrayObj, dimension)
-{
-	//_validateParameters(isArray.arguments.length, 2, "isArray");
-	if(typeof arrayObj == "undefined")
-		return false;
-	if(typeof dimension == "undefined" && typeof arrayObj._dim != "undefined")
-		dimension = arrayObj._dim;
-	if(arrayObj instanceof Array && arrayObj._dim == dimension )
-		return true;
-		//length and push function are used for duck test of an array, using the same here
-	else if(typeof arrayObj.length == "number" && typeof arrayObj.push == "function" && arrayObj._dim == dimension)
-		return true;
-		
-	return false;	
-}
-
 function _arrayfind(arrayObj, obj, caseSensitive)
 {
 	if (arrayObj instanceof Array) 
@@ -2870,39 +2854,24 @@ function QueryMap(q, func){
 
 function QueryFilter(q, func){
 
-    var data = {};
-	for(var key in q.DATA){
-		if (q.DATA.hasOwnProperty(key)) {       
-		  data[key] =  [];
-        }
-		
-	 }
+    var data = q.DATA;
 	var cols = q.COLUMNS;
-	var length = q.length;
-	if(!length)
-		length = q.DATA.length;
-	var n = 0;
 	var rowStruct = {};
-	for(var m = 0;m < length;m++){
-	 for(var key in q.DATA){
-		if (q.DATA.hasOwnProperty(key)) {       
-		  rowStruct[key] =  q.DATA[key][m];
+	for(var m = 0;m < q.length;m++){
+	 for(var key in data){
+		if (data.hasOwnProperty(key)) {       
+		  rowStruct[key] =  data[key][m];
         }
 		
 	 }
 	 var b =func.call(this, rowStruct);
-	 if(b){
-	 for(var key in q.DATA){
-		if (q.DATA.hasOwnProperty(key)) { 
-		  
-		   data[key][n] = q.DATA[key][m];
+	 for(var key in data){
+		if (data.hasOwnProperty(key)) { 
+		  if(!b)
+		   delete data[key][m];
         }
 	  }
-	  
-	  n++;
-	 }
 	}
-	q.DATA = data;
 	return q;
   
 }
@@ -3697,7 +3666,6 @@ function left(str, count)
 
 function len(str)
 {
-	 str = str + "";
 	_validateParameters(len.arguments.length, 1, "len");
 	
 	if(typeof str == "undefined")
@@ -4088,9 +4056,8 @@ function _refind(expression, str, start, returnSubExpression, ignoreCase)
 				}
 				
 			}			
-			result["LEN"] = lenArray;
-			result["POS"] = posArray;
-			result["MATCH"] = strMatch;
+			result["len"] = lenArray;
+			result["pos"] = posArray;
 			
 			return result;
 		}
@@ -4109,7 +4076,7 @@ function reMatch(expression, str)
 
 function reMatchNoCase(expression, str)
 {
-	_validateParameters(reMatchNoCase.arguments.length, 2, "reMatch");
+	_validateParameters(reMatch.arguments.length, 2, "reMatch");
 	
 	return _ReMatch(expression, str, true);
 }

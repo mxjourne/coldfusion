@@ -21,12 +21,12 @@
 		<div class="app-list-main-c">
 		<div class="toggle-bar clearfix">
 			<div class="app-label">{{locale.Applications}}</div>
-			<img src="images/hide-nav.png" alt="navigation menu" class="toggle-icon" ng-class="{'collapsed': tryOutUI.appCollapsed}" ng-click="toggleListing()" tabindex="0" role="button" aria-label="navigation menu" aria-expanded="{{ !tryOutUI.appCollapsed}}" />
+			<img src="images/hide-nav.png" class="toggle-icon" ng-class="{'collapsed': tryOutUI.appCollapsed}" ng-click="toggleListing()"/>
 
 		</div>
 		<div class="app-left">
 			<div class="app-tbar">
-				<input type="text" title="Search" aria-label="Search" placeholder="{{locale.Search}}" class="app-search" ng-model="searchText" ng-class="{'no-add': devProfileNotEnabled}"/><span class="add-app-c" title="{{locale.AddApp}}" ng-click="showRegisterApp(true)" ng-show="!devProfileNotEnabled" tabindex="0"><span class="cficon add-app"></span></span>
+				<input type-"text" placeholder="{{locale.Search}}" class="app-search" ng-model="searchText" ng-class="{'no-add': devProfileNotEnabled}"/><span class="add-app-c" title="{{locale.AddApp}}" ng-click="showRegisterApp(true)" ng-show="!devProfileNotEnabled"><span class="cficon add-app"></span></span>
 			</div>
 		</div>
 		<ul class="app-list" ng-class="{'single-app': applications.length === 1}">
@@ -42,14 +42,13 @@
 					</span>
 					
 				</div>
-
 				<div class="apilist-body-c" ng-if="app.name === selectedApp.appname">	
 					<ul class="api-list" ng-repeat="resource in selectedApp.resources">
 						<li ng-repeat="api in resource.apis" class="api-item" ng-click="selectApi(api, app)" ng-class="{'selected-api': selectedApp.appname + api.path === tryOutUI.name}">
 							<span class="api-name-span">{{api.path || api.description}} </span>
 							<span>{{sortResources(api)}}</span>
 							<div class="api-item-methods">
-								<button ng-repeat="operation in api.operations" class="api-item-method" ng-click="selectApi(api, app, operation.method, $event, operation)" ng-class="{'method-selected': tryOutUI.selectedOperation === operation}" aria-label="{{api.path || api.description}} {{operation.method}}">{{operation.method}}</button>
+								<span ng-repeat="operation in api.operations" class="api-item-method" ng-click="selectApi(api, app, operation.method, $event, operation)" ng-class="{'method-selected': tryOutUI.selectedOperation === operation}">{{operation.method}}</span>
 
 							<div>
 						</li>
@@ -71,41 +70,37 @@
 		</div>
 		</div>
 		</div><div class="api-detail"resizable r-directions="[]" >
-		<div class="request-title"><h2 class="request_title">{{locale.Request}}</h2></div>
+		<div class="request-title">{{locale.Request}}</div>
 		<div class="api-try-out">
 			<!-- <h1 class="api-name">{{tryOutUI.name}}</h1>
 			<p class="api-desc">{{api.desc}}</p> -->
 
 			<div class="input-c">
 				<div class="url-c">
-<label class="request_type_label" for="request_type">Request Type</label> 
-<label class="request_url_label" for="request_url">Request URL</label><br>
 
-<select id="request_type" ng-options="operation as operation.method for operation in api.operations" 
-   ng-model="tryOutUI.selectedOperation" ng-change="updateVerb(tryOutUI.selectedOperation)" class="method-select" aria-label="Request type" title="Request type"></select>
+<select ng-options="operation as operation.method for operation in api.operations" 
+   ng-model="tryOutUI.selectedOperation" ng-change="updateVerb(tryOutUI.selectedOperation)" class="method-select"></select>
 
- <input id="request_url" type="text" aria-label="Request Url" title="Request url" placeholder="Enter request url" class="method-url" ng-model="tryOutUI.url"/><div class="url-copy-btn-c"  data-clipboard-target=".method-url" title="Copy URL to clipboard">
-				    	<img src="images/copy.svg" class="cficon url-copy-btn" tabindex="0" />
+ <input type="text" class="method-url" ng-model="tryOutUI.url"/><div class="url-copy-btn-c"  data-clipboard-target=".method-url" title="Copy URL to clipboard">
+				    	<img src="images/copy.svg" class="cficon url-copy-btn"/>
 				    	<div class="tip" ng-if="tryOutUI.urlCopied">{{Clipboard.isSupported() ? locale.URLCopied : locale.PressCopy}}</div>
 				    </div>
 				</div>
 				<div class="input-list">
-					<ul class="cf-tab-names" role="tablist">
-						<li role="tab" class="cf-tab-name" ng-class="{'selected': isActive('params', 'headers')}" ng-click="setActive('params', 'headers')" tabindex="0" aria-label="Headers" aria-selected="{{isActive('params', 'headers')}}">{{locale.Headers}}</li>
-						<li role="tab" class="cf-tab-name"  ng-class="{'selected': isActive('params', 'parameters')}" ng-click="setActive('params', 'parameters')" tabindex="0" aria-label="Parameters" aria-selected="{{isActive('params', 'parameters')}}">{{locale.Parameters}}</li>
-						<li role="tab" class="cf-tab-name"  ng-class="{'selected': isActive('params', 'body')}" ng-click="setActive('params', 'body')" tabindex="0" aria-label="Body" aria-selected="{{isActive('params', 'body')}}">{{locale.Body}}</li>
-						<li role="tab" class="cf-tab-name"  ng-class="{'selected': isActive('params', 'description')}" ng-click="setActive('params', 'description')" tabindex="0" aria-label="Description" aria-selected="{{isActive('params', 'description')}}">{{locale.Description}}</li>
+					<ul class="cf-tab-names">
+						<li class="cf-tab-name" ng-class="{'selected': isActive('params', 'headers')}" ng-click="setActive('params', 'headers')">{{locale.Headers}}</li>
+						<li class="cf-tab-name"  ng-class="{'selected': isActive('params', 'parameters')}" ng-click="setActive('params', 'parameters')">{{locale.Parameters}}</li>
+						<li class="cf-tab-name"  ng-class="{'selected': isActive('params', 'body')}" ng-click="setActive('params', 'body')">{{locale.Body}}</li>
+						<li class="cf-tab-name"  ng-class="{'selected': isActive('params', 'description')}" ng-click="setActive('params', 'description')">{{locale.Description}}</li>
 						<!--li class="cf-tab-name"  ng-class="{'selected': isActive('params', 'auth')}"ng-click="setActive('params', 'auth')"></li-->
 					</ul>
 					<div class="cf-tabs input-list-tabs">
 						<div class="cf-tab input-list-tab" ng-show="isActive('params', 'headers')">
-							<label class="header_label" for="header_name">Header</label> 
-							<label class="value_label" for="header_value">Value</label> 
-							<br>
+							
 							<ul class="headers-list request-headers">
 								<li ng-repeat="header in tryOutUI.headers" class="header-row old">
-									<input type="text" title="Header name" aria-label="Header name" ng-model="header.name" placeholder="{{locale.Name}}" class="header-field" tabindex="0" />
-									<input type="text" title="Header value" aria-label="Header value" ng-model="header.value" placeholder="{{locale.Value}}" class="header-field" ng-if="!header.list" tabindex="0"/>
+									<input type="text" ng-model="header.name" placeholder="{{locale.Name}}" class="header-field"/>
+									<input type="text" ng-model="header.value" placeholder="{{locale.Value}}" class="header-field" ng-if="!header.list"/>
 									<oi-select
 								
 						ng-if="header.list"
@@ -121,7 +116,7 @@
 									ng-click="showInfo(header, true)" href="javascript:void(0)" class="info-param"
 									ng-class="{'info-icon': header.paramObj && !header.paramObj.show}"
 									></a>
-									<a ng-click="deleteHeader($index, 'header')" href="javascript:void(0)" class="delete-header" role="button" aria-label="delete header"><img src="images/delete.png" alt="delete header"></a>
+									<a ng-click="deleteHeader($index, 'header')" href="javascript:void(0)" class="delete-header"></a>
 									<div ng-if="header.paramObj && header.paramObj.show" >
 										<div class="parameter-list-item">
 											<div class="parameter-list-name param-attr">
@@ -148,24 +143,22 @@
 							</ul>
 							<div class="header-row new-header" ng-click="addHeader('header')">
 							
-									<span type="text" model="header.name" placeholder="{{locale.Name}}" class="header-field dummy" tabindex="0">{{locale.AddHeader}}</span>
-									<span type="text" model="header.value" placeholder="{{locale.Value}}" class="header-field dummy" tabindex="0">{{locale.AddValue}}</span>
+									<span type="text" model="header.name" placeholder="{{locale.Name}}" class="header-field dummy" >{{locale.AddHeader}}</span>
+									<span type="text" model="header.value" placeholder="{{locale.Value}}" class="header-field dummy" >{{locale.AddValue}}</span>
 									
 								</div>
 						</div>
 						<div class="cf-tab input-list-tab" ng-show="isActive('params', 'parameters')">
-							<label class="parameter_label" for="parameter_name">Parameter</label> 
-							<label class="value_label" for="parameter_value">Value</label> 
-							<br>
+							
 							<ul class="headers-list request-parameters">
 								<li ng-repeat="parameter in tryOutUI.parameters" class="header-row">
-									<input type="text" title="Parameter name" aria-label="Parameter name" ng-model="parameter.name" placeholder="{{locale.Name}}" class="header-field" tabindex="0" />
-									<input type="text" title="Parameter value" aria-label="Parameter value" ng-model="parameter.value" placeholder="{{locale.Value}}" class="header-field" tabindex="0" />
+									<input type="text" ng-model="parameter.name" placeholder="{{locale.Name}}" class="header-field" />
+									<input type="text" ng-model="parameter.value" placeholder="{{locale.Value}}" class="header-field" />
 									<a ng-if="parameter.paramObj "
 									ng-click="showInfo(parameter, true)" href="javascript:void(0)" class="info-param"
 									ng-class="{'info-icon': parameter.paramObj && !parameter.paramObj.show}"
 									></a>
-									<a ng-click="deleteHeader($index, 'parameter')" href="javascript:void(0)" class="delete-header" role="button" aria-label="delete header"><img src="images/delete.png"></a>
+									<a ng-click="deleteHeader($index, 'parameter')" href="javascript:void(0)" class="delete-header"></a>
 									<div ng-if="parameter.paramObj && parameter.paramObj.show" >
 										<div class="parameter-list-item">
 											<div class="parameter-list-name param-attr">
@@ -187,8 +180,8 @@
 
 							</ul>
 							<div class="header-row new-header request-parameters" ng-click="addHeader('parameter')">
-									<span type="text" model="parameter.name" placeholder="{{locale.Name}}" class="header-field dummy" tabindex="0" >{{locale.AddParameter}}</span>
-									<span type="text" model="parameter.value" placeholder="{{locale.Value}}" class="header-field dummy" tabindex="0">{{locale.AddValue}}</span>
+									<span type="text" model="parameter.name" placeholder="{{locale.Name}}" class="header-field dummy" >{{locale.AddParameter}}</span>
+									<span type="text" model="parameter.value" placeholder="{{locale.Value}}" class="header-field dummy" >{{locale.AddValue}}</span>
 									
 								</div>
 						</div>
@@ -222,19 +215,19 @@
 				</div>
 				<div class="send-action clearfix">
 
-				    <span class="add-template-btn btn send-action-btn fill-btn" ng-click="tryOutApi()" tabindex="0">{{locale.Send}}</span>
+				    <span class="add-template-btn btn send-action-btn fill-btn" ng-click="tryOutApi()">{{locale.Send}}</span>
 				</div>
 			
 			</div>
 
 		</div>
 		<div class="output-c">
-			<div class="response-title"><h2 class="response_title">{{locale.Response}}</h2></div>
+			<div class="response-title">{{locale.Response}}</div>
 			<div class="response-c">
-				<ul class="cf-tab-names" role="tablist">
-						<li role="tab" class="cf-tab-name" ng-class="{'selected': isActive('response', 'body')}" ng-click="setActive('response', 'body')" tabindex="0" aria-label="Body" aria-selected="{{isActive('response', 'body')}}">{{locale.Body}}</li>
-						<li role="tab" class="cf-tab-name"  ng-class="{'selected': isActive('response', 'headers')}" ng-click="setActive('response', 'headers')" tabindex="0" aria-label="Headers" aria-selected="{{isActive('response', 'headers')}}">{{locale.Headers}}</li>
-						<li role="tab" class="cf-tab-name"  ng-class="{'selected': isActive('response', 'request-summary')}" ng-click="setActive('response', 'request-summary')" tabindex="0" aria-label="request summary" aria-selected="{{isActive('response', 'request-summary')}}">{{locale.RequestSummary}}</li>
+				<ul class="cf-tab-names">
+						<li class="cf-tab-name" ng-class="{'selected': isActive('response', 'body')}" ng-click="setActive('response', 'body')">{{locale.Body}}</li>
+						<li class="cf-tab-name"  ng-class="{'selected': isActive('response', 'headers')}" ng-click="setActive('response', 'headers')">{{locale.Headers}}</li>
+						<li class="cf-tab-name"  ng-class="{'selected': isActive('response', 'request-summary')}" ng-click="setActive('response', 'request-summary')">{{locale.RequestSummary}}</li>
 						<!--li class="cf-tab-name"  ng-class="{'selected': isActive('params', 'auth')}"ng-click="setActive('params', 'auth')"></li-->
 					</ul>
 					<div class="cf-tabs response-tabs">

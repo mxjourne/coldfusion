@@ -7,21 +7,21 @@ terms of the Adobe license agreement accompanying it.  If you have received this
 source other than Adobe, then your use, modification, or distribution of it requires the prior
 written permission of Adobe.*/
 var KT_focusedEl=null;
-KT_validateSingle=function(_979,_97a){
-var _97b=_979.charCodeAt(0);
-switch(_97a){
+KT_validateSingle=function(_96e,_96f){
+var _970=_96e.charCodeAt(0);
+switch(_96f){
 case "9":
-if(_97b<58&&_97b>47){
+if(_970<58&&_970>47){
 return true;
 }
 break;
 case "A":
-if((_97b<91&&_97b>64)||(_97b<123&&_97b>96)){
+if((_970<91&&_970>64)||(_970<123&&_970>96)){
 return true;
 }
 break;
 case "X":
-if((_97b<91&&_97b>64)||(_97b<123&&_97b>96)||(_97b<58&&_97b>47)){
+if((_970<91&&_970>64)||(_970<123&&_970>96)||(_970<58&&_970>47)){
 return true;
 }
 break;
@@ -33,8 +33,8 @@ return true;
 break;
 }
 };
-KT_maskDefaultValue=function(_97c){
-switch(_97c){
+KT_maskDefaultValue=function(_971){
+switch(_971){
 case "9":
 return "0";
 break;
@@ -52,8 +52,8 @@ return "0";
 break;
 }
 };
-KT_isSpecialChar=function(_97d){
-if(_97d=="9"||_97d=="A"||_97d=="X"||_97d=="?"){
+KT_isSpecialChar=function(_972){
+if(_972=="9"||_972=="A"||_972=="X"||_972=="?"){
 return true;
 }else{
 return false;
@@ -69,13 +69,13 @@ return;
 var mask=KT_focusedEl.mask;
 var val=KT_focusedEl.value;
 var i=0;
-var _981=false;
+var _976=false;
 if(val==KT_focusedEl.oldText){
 return;
 }
 if(val.length>mask.length){
 val=val.substr(0,mask.length);
-_981=true;
+_976=true;
 }
 for(;i<mask.length;i++){
 if(val.charCodeAt(i).toString()!="NaN"){
@@ -90,9 +90,9 @@ break;
 }else{
 if(val.charAt(i)!=mask.charAt(i)){
 if(i==val.length-1){
-var _982=val.substr(val.length-1,val.length);
-val=val.substr(0,val.length-1)+mask.charAt(i)+_982;
-_981=true;
+var _977=val.substr(val.length-1,val.length);
+val=val.substr(0,val.length-1)+mask.charAt(i)+_977;
+_976=true;
 continue;
 }else{
 val=KT_focusedEl.oldText;
@@ -108,7 +108,7 @@ break;
 for(;i<mask.length;i++){
 if(!KT_isSpecialChar(mask.charAt(i))){
 val+=mask.charAt(i);
-_981=true;
+_976=true;
 }else{
 break;
 }
@@ -118,18 +118,18 @@ break;
 }
 if(val.length>mask.length){
 val=val.substr(0,mask.length);
-_981=true;
+_976=true;
 }
 if(KT_focusedEl.value!=val){
 KT_focusedEl.value=val;
 }
 KT_focusedEl.oldText=val;
-if(_981){
+if(_976){
 }
 };
-mask_parseFirstTime=function(_983,mask){
-var _985="";
-var _986="";
+mask_parseFirstTime=function(_978,mask){
+var _97a="";
+var _97b="";
 cond=1;
 imask=0;
 ival=0;
@@ -137,57 +137,57 @@ cnt=0;
 while(cond==1){
 cond=1;
 if(!KT_isSpecialChar(mask.charAt(imask))){
-if(_983.charCodeAt(ival).toString()!="NaN"){
-if(mask.charAt(imask)==_983.charAt(ival)){
+if(_978.charCodeAt(ival).toString()!="NaN"){
+if(mask.charAt(imask)==_978.charAt(ival)){
 imask++;
 ival++;
 }else{
-_983=_983.substr(0,ival)+mask.charAt(imask)+_983.substr(ival,_983.length);
+_978=_978.substr(0,ival)+mask.charAt(imask)+_978.substr(ival,_978.length);
 imask=0;
 ival=0;
 cond=1;
 }
 }else{
-_983+=KT_maskDefaultValue(mask.charAt(imask));
+_978+=KT_maskDefaultValue(mask.charAt(imask));
 }
 }else{
 imask++;
 ival++;
 }
-if(imask>=mask.length||ival>=_983.length){
+if(imask>=mask.length||ival>=_978.length){
 cond=0;
 }
 }
 for(i=0;i<mask.length;i++){
 if(KT_isSpecialChar(mask.charAt(i))){
-_985+=mask.charAt(i);
-if(_983.charCodeAt(i).toString()!="NaN"){
-_986+=_983.charAt(i);
+_97a+=mask.charAt(i);
+if(_978.charCodeAt(i).toString()!="NaN"){
+_97b+=_978.charAt(i);
 }else{
-_986+=KT_maskDefaultValue(mask.charAt(i));
+_97b+=KT_maskDefaultValue(mask.charAt(i));
 }
 }
 }
-oldvalue=_983;
-_983=_986;
-var _987="";
-for(i=0;i<_985.length;i++){
-if(!KT_validateSingle(_983.charAt(i),_985.charAt(i))){
-_987+=KT_maskDefaultValue(_985.charAt(i));
+oldvalue=_978;
+_978=_97b;
+var _97c="";
+for(i=0;i<_97a.length;i++){
+if(!KT_validateSingle(_978.charAt(i),_97a.charAt(i))){
+_97c+=KT_maskDefaultValue(_97a.charAt(i));
 }else{
-_987+=_983.charAt(i);
+_97c+=_978.charAt(i);
 }
 }
-var _988="";
+var _97d="";
 var j=0;
 for(i=0;i<mask.length;i++){
 if(KT_isSpecialChar(mask.charAt(i))){
-_988+=_987.charAt(j++);
+_97d+=_97c.charAt(j++);
 }else{
-_988+=mask.charAt(i);
+_97d+=mask.charAt(i);
 }
 }
-return _988;
+return _97d;
 };
 mask_onSetFocus=function(obj,mask){
 if((typeof window.getSelection=="undefined"&&typeof document.selection=="undefined")){

@@ -49,7 +49,7 @@
 <cfoutput>
 <font size="-2">#cd.name#</font><br>
 <font size="+1"><b>#componentType# #ListLast(cd.name,'.')#
-<cfif StructKeyExists(cd,"displayName") and cd.displayName neq cd.name>(#EncodeForHTML(cd.displayName)#)</cfif>
+<cfif StructKeyExists(cd,"displayName") and cd.displayName neq cd.name>(#cd.displayName#)</cfif>
 </b></font>
 </cfoutput>
 
@@ -112,13 +112,13 @@
 <!--- DESCRIPTION --->
 
 <cfoutput>
-<cfif StructKeyExists(cd,"hint")><p>#EncodeforHTML(cd.hint)#</p></cfif>
+<cfif StructKeyExists(cd,"hint")><p>#cd.hint#</p></cfif>
 
 <tr><td>properties:</td>
 
 	<cfset list = ''>
 	<cfloop list="#ListSort(StructKeyList(properties),'TEXTNOCASE')#" index="propName">
-	<cfset list = listAppend(list, ' <a href="##property_#EncodeforHTMLAttribute(propName)#">#EncodeforHTML(propName)#</a>')>
+	<cfset list = listAppend(list, ' <a href="##property_#propName#">#propName#</a>')>
 	</cfloop><br>
 	<td>#list#</td>
 </tr>
@@ -150,7 +150,7 @@
 	<cfset list = ''>
 	<cfloop list="#ListSort(implementedMethodList,'TEXTNOCASE')#" index="methodName">
 	<cfset curMethod = methods[methodName].metadata>
-	<cfset item = ' <a href="##method_#EncodeforHTMLAttribute(methodName)#">#EncodeforHTML(methodName)#</a>'>
+	<cfset item = ' <a href="##method_#methodName#">#methodName#</a>'>
 	<cfif StructKeyExists( curMethod, 'access' ) and curMethod.access is 'private'>
 		<cfset item = item & '*'>
 	</cfif>
@@ -181,8 +181,8 @@
 </cfif>
 
 <cfif StructKeyExists(cd,"documentation")>
-	<cfif StructKeyExists( cd.documentation, "htmlSrc" )><tr><td>html document:</td><td><a href="#encodeforhtmlattribute(cd.documentation.htmlSrc)#">#EncodeforHTML(cd.documentation.htmlSrc)#</a></td></tr></cfif>
-	<cfif StructKeyExists( cd.documentation, "xmlSrc" )><tr><td>xml document:</td><td><a href="#encodeforhtmlattribute(cd.documentation.xmlSrc)#">#EncodeforHTML(cd.documentation.xmlSrc)#</a></td></tr></cfif>
+	<cfif StructKeyExists( cd.documentation, "htmlSrc" )><tr><td>html document:</td><td><a href="#cd.documentation.htmlSrc#">#cd.documentation.htmlSrc#</a></td></tr></cfif>
+	<cfif StructKeyExists( cd.documentation, "xmlSrc" )><tr><td>xml document:</td><td><a href="#cd.documentation.xmlSrc#">#cd.documentation.xmlSrc#</a></td></tr></cfif>
 </cfif>
 
 </table>
@@ -206,9 +206,9 @@
 	<cfset prop = properties[propName].metadata>
 	<cfset implementedIn = properties[propName].implementedIn>
 	<tr>
-		<td><a name="property_#EncodeforHTMLAttribute(prop.name)#"><b>#EncodeforHTML(prop.name)#</b></a>
-			<cfif StructKeyExists( prop, 'displayName' ) and prop.displayName neq prop.name>(#EncodeforHTML(prop.displayName)#)</cfif></td>
-		<td><cfif StructKeyExists( prop, 'hint' )>#EncodeforHTML(prop.hint)#</cfif></td>
+		<td><a name="property_#prop.name#"><b>#prop.name#</b></a>
+			<cfif StructKeyExists( prop, 'displayName' ) and prop.displayName neq prop.name>(#prop.displayName#)</cfif></td>
+		<td><cfif StructKeyExists( prop, 'hint' )>#prop.hint#</cfif></td>
 		<td><cfif StructKeyExists( prop, 'type' )>
 				#GetLinkForType( prop.type, "SHORT" )#
 			</cfif></td>
@@ -220,7 +220,7 @@
 		</cfif> ---></td>
 		<td><cfif StructKeyExists( prop, 'default')>
 				<cfif IsSimpleValue(prop.default)>
-					#EncodeforHTML(prop.default)#
+					#prop.default#
 				<cfelse>
 					{complex value}
 				</cfif>
@@ -251,8 +251,8 @@
 	<!--- method header --->
 
 	<tr><th align="left" colspan="#colspan#">
-		<a name="method_#EncodeforHTMLAttribute(method.name)#">#EncodeforHTML(method.name)#</a><cfif StructKeyExists( method, 'access' ) and method.access is 'private'>*</cfif>
-		<cfif IsDefined('method.displayName') and method.displayName neq method.name>(#EncodeforHTML(method.displayName)#)</cfif>
+		<a name="method_#method.name#">#method.name#</a><cfif StructKeyExists( method, 'access' ) and method.access is 'private'>*</cfif>
+		<cfif IsDefined('method.displayName') and method.displayName neq method.name>(#method.displayName#)</cfif>
 		</th></tr>
 	<tr><td>
 
@@ -284,7 +284,7 @@
 		<cfif IsDefined('param.required') and param.required>required</cfif>
 		<cfif IsDefined('param.type')>#GetLinkForType(param.type, "SHORT")#</cfif>
 		</i>
-		#EncodeforHTML(param.name)#<cfif IsDefined('param.default')>="#param.default#"</cfif><cfif j neq ArrayLen(method.parameters)>,</cfif>
+		#param.name#<cfif IsDefined('param.default')>="#param.default#"</cfif><cfif j neq ArrayLen(method.parameters)>,</cfif>
 	</cfloop>
 	)
 	</i>
@@ -292,8 +292,8 @@
 	<br><br>
 	<!--- method description --->
 
-	<cfif IsDefined('method.hint') and method.hint neq "">#EncodeforHTML(method.hint)#<br><br></cfif>
-	<cfif IsDefined( 'method.roles' ) and method.roles neq ''>Available only for users in one of the roles: #EncodeforHTML(method.roles)#<br></cfif>
+	<cfif IsDefined('method.hint') and method.hint neq "">#method.hint#<br><br></cfif>
+	<cfif IsDefined( 'method.roles' ) and method.roles neq ''>Available only for users in one of the roles: #method.roles#<br></cfif>
 
 	Output: <cfif !IsDefined( 'method.output' )>  <cfelseif method.output eq false>suppressed<cfelse>enabled</cfif><br>
 
@@ -302,10 +302,10 @@
 		Parameters:<br>
 		<cfloop index="j" from="1" to="#ArrayLen(method.parameters)#">
 			<cfset param = method.parameters[j]>
-			&nbsp;&nbsp; <b>#EncodeforHTML(param.name)#:</b>
+			&nbsp;&nbsp; <b>#param.name#:</b>
 			<cfif IsDefined('param.type')>#GetLinkForType(param.type, "SHORT")#,<cfelse>any,</cfif>
 			<cfif IsDefined('param.required') and param.required>required,<cfelse>optional,</cfif>
-			<cfif IsDefined('param.displayName')>#EncodeforHTML(param.displayName)#<cfelse>#EncodeforHTML(param.name)#</cfif>
+			<cfif IsDefined('param.displayName')>#param.displayName#<cfelse>#param.name#</cfif>
 			<cfif IsDefined('param.hint') and param.hint neq ''>- #param.hint#</cfif>
 			<br>
 		</cfloop>

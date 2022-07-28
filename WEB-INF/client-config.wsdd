@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
- <handler name="primitiveHandler" type="java:coldfusion.xml.rpc.module.CFPrimitiveHandler"/>
- <handler name="log" type="java:coldfusion.xml.rpc.module.SOAPMonitor"/>
+ <handler name="primitiveHandler" type="java:coldfusion.xml.rpc.CFPrimitiveHandler"/>
+ <handler name="log" type="java:coldfusion.xml.rpc.SOAPMonitor"/>
  <globalConfiguration>
   <!-- Give ColdFusion the ability to log the request and the response SOAP message -->
   <!-- Not recommended for production -->

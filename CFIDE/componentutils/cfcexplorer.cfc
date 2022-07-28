@@ -299,7 +299,7 @@
 			</cfscript>
 		<cfcatch type="coldfusion.runtime.CfJspPage$NoSuchTemplateException">
 			<cfoutput><h4>Component not found</h4>
-			The component definition file for component '#EncodeForHTML(name)#' <cfif IsDefined('arguments.path') and arguments.path neq '' > and path '#EncodeForHTML(arguments.path)#'  </cfif>cannot be found on this server.</cfoutput>
+			The component definition file for component '#HTMLEditFormat(name)#' <cfif IsDefined('arguments.path') and arguments.path neq '' > and path '#HTMLEditFormat(arguments.path)#'  </cfif>cannot be found on this server.</cfoutput>
 		</cfcatch>
 		<cfcatch type="any">
 			<cfrethrow>

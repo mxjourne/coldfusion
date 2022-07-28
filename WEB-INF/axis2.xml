@@ -201,16 +201,16 @@
          For more information, please have a look at the servlet transport documentation:
          http://axis.apache.org/axis2/java/core/docs/servlet-transport.html -->
     <transportReceiver name="http"
-                       class="coldfusion.xml.rpc.module.CFAxisServletListener"/>
+                       class="coldfusion.xml.rpc.CFAxisServletListener"/>
 
     <!--Uncomment if you want to have TCP transport support-->
-    <!--<transportReceiver name="tcp"
+    <!--transportReceiver name="tcp"
                        class="org.apache.axis2.transport.tcp.TCPServer">
-        <parameter name="port">6060</parameter>-->
+        <parameter name="port">6060</parameter-->
     <!--If you want to give your own host address for EPR generation-->
     <!--uncomment the following paramter , and set it as you required.-->
     <!--<parameter name="hostname">tcp://myApp.com/ws</parameter>-->
-    <!-- </transportReceiver> -->
+    <!-- /transportReceiver -->
 
     <!-- ================================================= -->
     <!-- Transport Outs -->
@@ -425,7 +425,7 @@
         <!--  System predefined phases       -->
         <phase name="Transport">
             <handler name="RequestURIBasedDispatcher"
-                     class="coldfusion.xml.rpc.module.CFRequestURIBasedDispatcher">
+                     class="coldfusion.xml.rpc.CFRequestURIBasedDispatcher">
                 <order phase="Transport"/>
             </handler>
             <handler name="SOAPActionBasedDispatcher"
@@ -443,7 +443,7 @@
         <phase name="PreDispatch"/>
         <phase name="Dispatch" class="org.apache.axis2.engine.DispatchPhase">
             <handler name="RequestURIBasedDispatcher"
-                     class="coldfusion.xml.rpc.module.CFRequestURIBasedDispatcher"/>
+                     class="coldfusion.xml.rpc.CFRequestURIBasedDispatcher"/>
             <handler name="SOAPActionBasedDispatcher"
                      class="org.apache.axis2.dispatchers.SOAPActionBasedDispatcher"/>
             <handler name="RequestURIOperationDispatcher"
@@ -490,7 +490,7 @@
         <phase name="PreDispatch"/>
         <phase name="Dispatch" class="org.apache.axis2.engine.DispatchPhase">
             <handler name="RequestURIBasedDispatcher"
-                     class="coldfusion.xml.rpc.module.CFRequestURIBasedDispatcher"/>
+                     class="coldfusion.xml.rpc.CFRequestURIBasedDispatcher"/>
             <handler name="SOAPActionBasedDispatcher"
                      class="org.apache.axis2.dispatchers.SOAPActionBasedDispatcher"/>
             <handler name="RequestURIOperationDispatcher"

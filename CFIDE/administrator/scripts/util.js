@@ -26,7 +26,6 @@
 			var left = (window.innerWidth / 2) - ((550 / 2));
     		var top = (window.innerHeight / 2) - ((460 / 2));
 		    windowObjectReference = window.open("../filedialog/index.cfm?type=" +  type +   "&fromjscript=true&dialogStyle=selectDirectory&formelem=" + formelem + "&defaultPath=" + escape(defpath), "_blank","height=440,width=550,top="+top+",left="+left+",dependent=true,resizable=no,modal=yes,center=yes");
-		    windowObjectReference.cfpopup = true;
 		}
 		
 		if ( (dialogResults != undefined) && (dialogResults != '') && (dialogResults != false) )
@@ -69,8 +68,4 @@
        element.value = text;
    }
  
- 	function handleSecurityRedirect(){
-        window.alert("There was an error accessing this page. Check logs for more details. ")
-        window.location.href = "../securityerror.cfm";
-    }
 	
