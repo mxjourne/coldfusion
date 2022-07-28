@@ -1,8 +1,8 @@
 
 <cfscript>
-    SetVariable("id", IsDefined("url.id") && len("#url.id#") gt 0 ? "#url.id#" : null);
+    SetVariable("id", IsDefined("url.id") && len("#url.id#") gt 0 ? "#url.id#" : "");
     factory = createObject("component", "components.FactoryProducer");
-    if(!isNull(id))
+    if(id!="")
     {
         studentsFactory =  factory.getFactory("students");
         getRecords = createObject("component", "components.studentsFactory");
@@ -69,7 +69,7 @@
     <div class="row mt-5">
         <div class="col-12 form-group text-center">
             <cfinput type = "hidden" name = "isSubmitted" value = "1">
-            <cfinput type = "hidden" name = "id" value = "#isNull(id) ? '' : id#">
+            <cfinput type = "hidden" name = "id" value = "#id=="" ? '' : id#">
             <cfinput type = "submit" name = "submit" class="btn btn-primary btn-lg m-auto" value="Add New Student">
         </div>
     </div>

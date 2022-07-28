@@ -29,7 +29,7 @@
         getAllRecords = getRecords.getMethod().get();
         if(len(form.sSearch))
         {
-            getAllRecords = getAllRecords.filter((_getAllRecords) => {
+            getAllRecords = getAllRecords.filter(function(_getAllRecords) {
                 return _getAllRecords.first_name.findNoCase("#form.sSearch#");
             });
         }
